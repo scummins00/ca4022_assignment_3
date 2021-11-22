@@ -61,5 +61,42 @@ labelled_data =
 		race, 
 		education;
 
-ltd = limit labelled_data 10;
-dump ltd;
+-- Checking how many unique companies are in the dataset (there are 1,635 distinct values)
+companies = FOREACH labelled_data GENERATE company;
+distinct_companies = DISTINCT companies;
+grouped_companies = GROUP distinct_companies ALL;
+distinct_company_count = FOREACH grouped_companies GENERATE COUNT(distinct_companies);
+DUMP distinct_company_count;
+
+-- Converting company names to uppercase to avoid duplicates from camel-case and lowercase entries
+uppercase_companies_data = 
+	FOREACH labelled_data
+	GENERATE
+		timestamp, 
+		UPPER(company) as company, 
+		level,
+		title, 
+		totalyearlycompensation, 
+		location,
+		yearsofexperience, 
+		yearsatcompany, 
+		tag,
+		basesalary, 
+		stockgrantvalue, 
+		bonus,
+		gender, 
+		otherdetails, 
+		cityid,
+		dmaid, 
+		race, 
+		education;
+
+-- Checking how many unique companies remain in the dataset 
+-- (There are now 1,104 distinct values, meaning 531 entries were duplicates)
+companies = FOREACH uppercase_companies_data GENERATE company;
+distinct_companies = DISTINCT companies;
+grouped_companies = GROUP distinct_companies ALL;
+distinct_company_count = FOREACH grouped_companies GENERATE COUNT(distinct_companies);
+DUMP distinct_company_count;
+
+STORE uppercase_companies_data INTO 'cleaned_salary_data' using PigStorage('|');
