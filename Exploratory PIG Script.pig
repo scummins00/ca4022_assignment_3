@@ -127,4 +127,4 @@ imputed_data =
 		race, 
 		education;
 
-STORE imputed_data INTO 'data/imputed_salary_data' USING PigStorage('|');
+STORE imputed_data INTO 'data/imputed_salary_data' USING PigStorage('|', '-schema');
