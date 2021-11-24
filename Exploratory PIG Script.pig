@@ -2,7 +2,7 @@
 DEFINE CSVLoader org.apache.pig.piggybank.storage.CSVLoader();
 
 -- Importing the datasets
-headed_data = LOAD 'Levels_Fyi_Salary_Data.csv' 
+headed_data = LOAD 'data/Levels_Fyi_Salary_Data.csv' 
 	USING CSVLoader() 
 	AS (
 		timestamp:chararray, 
@@ -99,4 +99,32 @@ grouped_companies = GROUP distinct_companies ALL;
 distinct_company_count = FOREACH grouped_companies GENERATE COUNT(distinct_companies);
 DUMP distinct_company_count;
 
-STORE uppercase_companies_data INTO 'cleaned_salary_data' using PigStorage('|');
+--Find the average salary
+has_salary = FILTER uppercase_companies_data BY basesalary != 0;
+avg_salary_grouped = GROUP has_salary ALL;
+avg_salary = FOREACH avg_salary_grouped GENERATE ROUND(AVG(has_salary.basesalary)) as avg;
+
+--Give anyone with a salary of 0 the average salary
+imputed_data =
+	FOREACH uppercase_companies_data
+	GENERATE
+		timestamp, 
+		company, 
+		level,
+		title, 
+		totalyearlycompensation, 
+		location,
+		yearsofexperience, 
+		yearsatcompany, 
+		tag,
+		(basesalary > 0 ? basesalary : avg_salary.avg) AS imputed_salary, 
+		stockgrantvalue, 
+		bonus,
+		gender, 
+		otherdetails, 
+		cityid,
+		dmaid, 
+		race, 
+		education;
+
+STORE imputed_data INTO 'data/imputed_salary_data' USING PigStorage('|');
