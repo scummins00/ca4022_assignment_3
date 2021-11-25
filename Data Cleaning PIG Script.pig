@@ -61,7 +61,7 @@ labelled_data =
 		race, 
 		education;
 
--- Checking how many unique companies are in the dataset (there are 1,635 distinct values)
+-- Checking how many unique companies are in the dataset (there are 1,633 distinct values)
 companies = FOREACH labelled_data GENERATE company;
 distinct_companies = DISTINCT companies;
 grouped_companies = GROUP distinct_companies ALL;
@@ -92,7 +92,7 @@ uppercase_companies_data =
 		education;
 
 -- Checking how many unique companies remain in the dataset 
--- (There are now 1,104 distinct values, meaning 531 entries were duplicates)
+-- (There are now 1,102 distinct values, meaning 531 entries were duplicates)
 companies = FOREACH uppercase_companies_data GENERATE company;
 distinct_companies = DISTINCT companies;
 grouped_companies = GROUP distinct_companies ALL;
@@ -127,4 +127,27 @@ imputed_data =
 		race, 
 		education;
 
-STORE imputed_data INTO 'data/imputed_salary_data' USING PigStorage('|');
+-- Removing instances of pipe bar 
+replaced_data = 
+	FOREACH imputed_data 
+	GENERATE 
+		REPLACE(timestamp,'|',''), 
+		REPLACE(company,'|',''), 
+		REPLACE(level,'|',''), 
+		REPLACE(title,'|',''), 
+		totalyearlycompensation,
+		REPLACE(location,'|',''), 
+		yearsofexperience,
+		yearsatcompany,
+		REPLACE(tag,'|',''), 
+		imputed_salary,
+		stockgrantvalue,
+		bonus, 
+		REPLACE(gender,'|',''), 
+		REPLACE(otherdetails,'|',''), 
+		REPLACE(cityid,'|',''), 
+		REPLACE(dmaid,'|',''), 
+		REPLACE(race,'|',''), 
+		REPLACE(education,'|','');
+
+STORE replaced_data INTO 'data/imputed_salary_data' USING PigStorage('|');
