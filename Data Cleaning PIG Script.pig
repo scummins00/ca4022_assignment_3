@@ -127,7 +127,6 @@ imputed_data =
 		race, 
 		education;
 
-<<<<<<< HEAD:Data Cleaning PIG Script.pig
 -- Removing instances of pipe bar 
 replaced_data = 
 	FOREACH imputed_data 
@@ -151,7 +150,4 @@ replaced_data =
 		REPLACE(race,'|',''), 
 		REPLACE(education,'|','');
 
-STORE replaced_data INTO 'data/imputed_salary_data' USING PigStorage('|');
-=======
-STORE imputed_data INTO 'data/imputed_salary_data' USING PigStorage('|', '-schema');
->>>>>>> 1e504882d423358e8c1d852af3f89c27db103212:Exploratory PIG Script.pig
+STORE replaced_data INTO 'data/replaced_salary_data' USING PigStorage('|', 'schema');
