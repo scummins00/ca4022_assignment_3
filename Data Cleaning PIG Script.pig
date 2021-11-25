@@ -145,4 +145,4 @@ replaced_data =
 		REPLACE(race,'|',''), 
 		REPLACE(education,'|','');
 
-STORE replaced_data INTO 'data/replaced_salary_data' USING PigStorage('|', 'schema');
+STORE replaced_data INTO 'data/replaced_salary_data' USING PigStorage('\t', 'schema');
