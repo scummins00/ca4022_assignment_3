@@ -145,9 +145,55 @@ sep_datetime =
 		race, 
 		education;
         
+--Reverse the date string
+reverse_date = 
+    FOREACH sep_datetime
+    GENERATE
+		STRSPLIT(date, '/', -1) as date,
+		time,
+		company, 
+		level,
+		title, 
+		totalyearlycompensation, 
+		location,
+		yearsofexperience, 
+		yearsatcompany, 
+		tag,
+		imputed_salary, 
+		stockgrantvalue, 
+		bonus,
+		gender,  
+		cityid,
+		dmaid, 
+		race, 
+		education;
+
+--Step 2 of reversing date
+reverse_date2 = 
+    FOREACH reverse_date
+    GENERATE
+		CONCAT(date.$2, '-', date.$0, '-', date.$1) AS date,
+		time,
+		company, 
+		level,
+		title, 
+		totalyearlycompensation, 
+		location,
+		yearsofexperience, 
+		yearsatcompany, 
+		tag,
+		imputed_salary, 
+		stockgrantvalue, 
+		bonus,
+		gender,  
+		cityid,
+		dmaid, 
+		race, 
+		education;
+        
 -- Removing instances of pipe bar 
 replaced_data = 
-	FOREACH sep_datetime 
+	FOREACH reverse_date2 
 	GENERATE 
 		REPLACE(date,'|',''),
 		REPLACE(time,'|',''),
