@@ -122,12 +122,35 @@ imputed_data =
 		dmaid, 
 		race, 
 		education;
-
+        
+-- Let's seperate our datetime column into two seperate columns: date, time
+sep_datetime = 
+	FOREACH imputed_data
+	GENERATE
+		FLATTEN(STRSPLIT(timestamp, '\\s')) AS (date:chararray, time:chararray),
+		company, 
+		level,
+		title, 
+		totalyearlycompensation, 
+		location,
+		yearsofexperience, 
+		yearsatcompany, 
+		tag,
+		imputed_salary, 
+		stockgrantvalue, 
+		bonus,
+		gender,  
+		cityid,
+		dmaid, 
+		race, 
+		education;
+        
 -- Removing instances of pipe bar 
 replaced_data = 
-	FOREACH imputed_data 
+	FOREACH sep_datetime 
 	GENERATE 
-		REPLACE(timestamp,'|',''), 
+		REPLACE(date,'|',''),
+		REPLACE(time,'|',''),
 		REPLACE(company,'|',''), 
 		REPLACE(level,'|',''), 
 		REPLACE(title,'|',''), 
@@ -145,4 +168,4 @@ replaced_data =
 		REPLACE(race,'|',''), 
 		REPLACE(education,'|','');
 
-STORE replaced_data INTO 'data/replaced_salary_data' USING PigStorage('\t', 'schema');
+STORE replaced_data INTO 'data/seperated_time_data' USING PigStorage('\t', 'schema');
