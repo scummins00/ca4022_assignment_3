@@ -156,7 +156,7 @@ fig.update_layout(
     title_text = '2017 to 2021 US STEM Related Positions Average Annual Compensation by State',
     geo_scope='usa', # limite map scope to USA
 )
-iplot(fig,validate=False, filename='usa-map')
+fig
 
 
 # ### Graph Analysis
