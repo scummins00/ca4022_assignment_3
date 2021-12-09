@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Gradient Boosted Tree &#8212; CA4022 Assignment 3</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Impact of Covid-19 on Salaries &amp; Employment" href="Impact%20of%20Covid-19%20on%20Salaries%20%26%20Employment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">CA4022 Assignment 3</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Preliminary%20Data%20Analysis.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Impact%20of%20Social%20Factors%20on%20Salary.html">
+   Impact of Social Factors on Salary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="State%20Level%20Salary%20Comparison.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Impact%20of%20Covid-19%20on%20Salaries%20%26%20Employment.html">
+   Impact of Covid-19 on Salaries &amp; Employment
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Gradient Boosted Tree
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Gradient Boosted Tree.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FGradient Boosted Tree.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Gradient Boosted Tree.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#encoding-of-categorical-features">
+   Encoding of Categorical Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#typecasting-of-features">
+   Typecasting of Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assembling-input-features">
+   Assembling Input Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalise-feature-set">
+   Normalise Feature Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-test-split">
+   Training, Test split
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pipeline-creation">
+   Pipeline Creation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prediction-on-test-data">
+   Prediction on Test Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-tuning">
+   Model Tuning
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="gradient-boosted-tree">
+<h1>Gradient Boosted Tree<a class="headerlink" href="#gradient-boosted-tree" title="Permalink to this headline">¶</a></h1>
+<p>The following Jupyter Notebook shows the use of <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a> <code class="docutils literal notranslate"><span class="pre">GBTRegressor</span></code>. In the notebook, we’ll first define our schema structure and populate it with our data. Our data is currently stored in <code class="docutils literal notranslate"><span class="pre">cleaning.txt</span></code>, a simple text file representation of the output our ‘Data Cleaning PIG Script’ produces.</p>
+<p>We’ll perform some simple data transformations to ensure any categorical features are presented as DoubleType using <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a>’s <code class="docutils literal notranslate"><span class="pre">StringIndexer</span></code> API. We’ll do the same for any Integer typed features.</p>
+<p>We’ll then use the <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a> <code class="docutils literal notranslate"><span class="pre">VectorIndexer</span></code> to produce a vector representation of our input features. This step will be added as a stage in our ML Pipeline called <strong>VectorAssembler</strong>. Then we’ll normalise the input values so that they are all on the same scale. This normalizer step will also be added to our Pipeline as a stage named <strong>normalizer</strong>.</p>
+<p>Finally, we’ll instantiate our GBT Model using <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a>’s <code class="docutils literal notranslate"><span class="pre">GBTRegressor</span></code>. This will be the final stage in our ML Pipeline, and represents the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> stage. It will simply be named <strong>GBT</strong>. We’ll use our Pipeline to instantiate a model which will be fit on our training data. We’ll then use this trained model to transform our test data and receive a salary prediction for each data point. We’ll calculate a measure of success using <strong>RMSE</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">findspark</span>
+<span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyspark</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="k">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.regression</span> <span class="k">import</span> <span class="n">GBTRegressor</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">VectorIndexer</span><span class="p">,</span> <span class="n">StringIndexer</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="k">import</span> <span class="n">RegressionEvaluator</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkConf</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="n">col</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Instantiate a spark session</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span> \
+    <span class="o">.</span><span class="n">builder</span> \
+    <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;SparkML Pipeline Building&quot;</span><span class="p">)</span> \
+    <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s define our schema</span>
+<span class="n">schema</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;company&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;totalyearlycompensation&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;yearsofexperience&quot;</span><span class="p">,</span> <span class="n">FloatType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;yearsatcompany&quot;</span><span class="p">,</span> <span class="n">FloatType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;tag&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;basesalary&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;stockgrantvalue&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;bonus&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;cityid&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;dmaid&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;race&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>\
+    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;education&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">)])</span>
+
+<span class="c1"># Load and parse the data file, converting it to a DataFrame.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;false&quot;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;delimiter&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/replaced_salary_data/cleaned.txt&quot;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AnalysisException</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">e470cdff9aa4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> 
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="c1"># Load and parse the data file, converting it to a DataFrame.</span>
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">data</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>\
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;false&quot;</span><span class="p">)</span>\
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;delimiter&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>\
+
+<span class="nn">/usr/local/spark/python/pyspark/sql/readwriter.py</span> in <span class="ni">load</span><span class="nt">(self, path, format, schema, **options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">204</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>         <span class="k">elif</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>             <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">:</span>
+
+<span class="nn">/usr/local/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py</span> in <span class="ni">__call__</span><span class="nt">(self, *args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1302</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1303</span>         <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway_client</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1304</span>         <span class="n">return_value</span> <span class="o">=</span> <span class="n">get_return_value</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1305</span>             <span class="n">answer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway_client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1306</span> 
+
+<span class="nn">/usr/local/spark/python/pyspark/sql/utils.py</span> in <span class="ni">deco</span><span class="nt">(*a, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="c1"># Hide where the exception came from that shows a non-Pythonic</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>                 <span class="c1"># JVM exception message.</span>
+<span class="ne">--&gt; </span><span class="mi">117</span>                 <span class="k">raise</span> <span class="n">converted</span> <span class="kn">from</span> <span class="bp">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>                 <span class="k">raise</span>
+
+<span class="ne">AnalysisException</span>: Path does not exist: file:/home/seanc/ca4022_assignment_3/docs/book/data/replaced_salary_data/cleaned.txt
+</pre></div>
+</div>
+</div>
+</div>
+<section id="encoding-of-categorical-features">
+<h2>Encoding of Categorical Features<a class="headerlink" href="#encoding-of-categorical-features" title="Permalink to this headline">¶</a></h2>
+<p>In the next cell, we will list all of our categorical features currently of the <code class="docutils literal notranslate"><span class="pre">string</span></code> type. All ML models require data to presented in numerical values. We will use the <code class="docutils literal notranslate"><span class="pre">StringIndexer</span></code> method to transform our categorical features into numerical columns.</p>
+<p>This is performed as a pre-processing step to our pipeline.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Different indexer for each categorical column</span>
+<span class="n">cols_to_be_indexed</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">]</span>
+
+<span class="n">indexed_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;company_index&#39;</span><span class="p">,</span> <span class="s1">&#39;level_index&#39;</span><span class="p">,</span> <span class="s1">&#39;title_index&#39;</span><span class="p">,</span> <span class="s1">&#39;location_index&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;gender_index&#39;</span><span class="p">,</span> <span class="s1">&#39;race_index&#39;</span><span class="p">,</span> <span class="s1">&#39;education_index&#39;</span><span class="p">]</span>
+
+<span class="c1">#Let&#39;s create a copy of our data to work from</span>
+<span class="n">indexed</span> <span class="o">=</span> <span class="n">data</span>
+
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">StringIndexer</span><span class="p">(</span><span class="n">inputCols</span><span class="o">=</span><span class="n">cols_to_be_indexed</span><span class="p">,</span> <span class="n">outputCols</span><span class="o">=</span><span class="n">indexed_cols</span><span class="p">)</span>
+<span class="n">indexed</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">indexed</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">indexed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="typecasting-of-features">
+<h2>Typecasting of Features<a class="headerlink" href="#typecasting-of-features" title="Permalink to this headline">¶</a></h2>
+<p>In this step, we will convert all of our <code class="docutils literal notranslate"><span class="pre">integer</span></code> features into <code class="docutils literal notranslate"><span class="pre">double</span></code> features. Again, this is a formality, and is better practice for ML pipeline building. Like the previous step, we will transform our integer values straight away.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#List of numerical columns to turn into double-type</span>
+
+<span class="n">numeric_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;totalyearlycompensation&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsofexperience&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsatcompany&#39;</span><span class="p">,</span> <span class="s1">&#39;basesalary&#39;</span><span class="p">,</span> <span class="s1">&#39;stockgrantvalue&#39;</span><span class="p">,</span> <span class="s1">&#39;bonus&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;cityid&#39;</span><span class="p">,</span> <span class="s1">&#39;dmaid&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">:</span>
+    <span class="n">indexed</span> <span class="o">=</span> <span class="n">indexed</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assembling-input-features">
+<h2>Assembling Input Features<a class="headerlink" href="#assembling-input-features" title="Permalink to this headline">¶</a></h2>
+<p>Here we assemble all of the input features for our model. This includes our previously Typecast features, and our Encoded categorical features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">VectorAssembler</span>
+
+<span class="n">feature_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gender_index&#39;</span><span class="p">,</span> <span class="s1">&#39;race_index&#39;</span><span class="p">,</span> <span class="s1">&#39;education_index&#39;</span><span class="p">,</span> <span class="s1">&#39;company_index&#39;</span><span class="p">,</span> <span class="s1">&#39;title_index&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;level_index&#39;</span><span class="p">,</span> <span class="s1">&#39;location_index&#39;</span><span class="p">,</span> <span class="s1">&#39;totalyearlycompensation&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsofexperience&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsatcompany&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;basesalary&#39;</span><span class="p">,</span> <span class="s1">&#39;stockgrantvalue&#39;</span><span class="p">,</span> <span class="s1">&#39;bonus&#39;</span><span class="p">,</span> <span class="s1">&#39;cityid&#39;</span><span class="p">,</span> <span class="s1">&#39;dmaid&#39;</span><span class="p">]</span>
+
+<span class="c1">#This is our Vector Assembler object, it will be put into our Pipeline later on</span>
+<span class="n">vectorAssembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span><span class="o">=</span><span class="n">feature_list</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s1">&#39;features&#39;</span><span class="p">,</span> <span class="n">handleInvalid</span><span class="o">=</span><span class="s1">&#39;keep&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s show the number of unique values per column</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">feature_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Distinct Count for column </span><span class="si">{col}</span><span class="s2">: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">indexed</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distinct Count for column gender_index: 5
+Distinct Count for column race_index: 6
+Distinct Count for column education_index: 6
+Distinct Count for column company_index: 1102
+Distinct Count for column title_index: 15
+Distinct Count for column level_index: 2919
+Distinct Count for column location_index: 1050
+Distinct Count for column totalyearlycompensation: 893
+Distinct Count for column yearsofexperience: 65
+Distinct Count for column yearsatcompany: 81
+Distinct Count for column basesalary: 482
+Distinct Count for column stockgrantvalue: 610
+Distinct Count for column bonus: 335
+Distinct Count for column cityid: 1045
+Distinct Count for column dmaid: 150
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="normalise-feature-set">
+<h2>Normalise Feature Set<a class="headerlink" href="#normalise-feature-set" title="Permalink to this headline">¶</a></h2>
+<p>Our input features are not on one singular scale. This can damage the performance of our ML model. For example, <code class="docutils literal notranslate"><span class="pre">yearsofexperience</span></code> will be a small value, less than 50. Whereas <code class="docutils literal notranslate"><span class="pre">basesalary</span></code> can be upwards of 1,000,000. We require all values to be within a similar range.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">Normalizer</span>
+
+<span class="n">normalizer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;features_norm&quot;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training-test-split">
+<h2>Training, Test split<a class="headerlink" href="#training-test-split" title="Permalink to this headline">¶</a></h2>
+<p>In the following cell, we are simply splitting our data into training and test data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">indexed</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dropping na&#39;s&quot;</span><span class="p">)</span>
+<span class="n">indexed</span> <span class="o">=</span> <span class="n">indexed</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">indexed</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62642
+Dropping na&#39;s
+62640
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s create our training and test data</span>
+<span class="n">splits</span> <span class="o">=</span> <span class="n">indexed</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
+<span class="n">trainingData</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">testingData</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pipeline-creation">
+<h2>Pipeline Creation<a class="headerlink" href="#pipeline-creation" title="Permalink to this headline">¶</a></h2>
+<p>When following the previous steps from <strong>Encoding of Categorical Features</strong>, through to <strong>Normalise Feature Set</strong>, you’ll notice that the <code class="docutils literal notranslate"><span class="pre">inputCol</span></code> used in the function is usually the <code class="docutils literal notranslate"><span class="pre">outputCol</span></code> from the previous function. This is done purposely so that the individual Transformer pieces of our pipeline fit together.</p>
+<p>In our stages, we start with our Vector Assembler. That feeds into our Normalizer as the final transformation step. The final stage is the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> stage which is the Gradient Boosted Trees Regressor model itself. We will define it in the following cells then instantiate our Pipeline.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s define our gbt with our target column as basesalary</span>
+<span class="n">gbt</span> <span class="o">=</span> <span class="n">GBTRegressor</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s1">&#39;basesalary&#39;</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s1">&#39;features_norm&#39;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now we instantiate our pipeline with the stages as discussed above.</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span><span class="n">vectorAssembler</span><span class="p">,</span> <span class="n">normalizer</span><span class="p">,</span> <span class="n">gbt</span><span class="p">])</span>
+
+<span class="c1">#We can then take this pipeline, fit it to our training data</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainingData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="prediction-on-test-data">
+<h2>Prediction on Test Data<a class="headerlink" href="#prediction-on-test-data" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve built our model, let’s test its accuracy using the test data we set aside earlier. We can apply our model to data using <code class="docutils literal notranslate"><span class="pre">model.transform(&lt;data&gt;)</span></code>. This will create a DataFrame object, where each row has a new column named <code class="docutils literal notranslate"><span class="pre">prediction</span></code>.</p>
+<p>Let’s take a look at the prediction column. As our dataset is quite large, we’ll view a subset of the columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">trainingData</span><span class="p">)</span>
+
+<span class="c1">#Let&#39;s just quickly make our predictions rounded to 2 decimals</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">prediction</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="s2">&quot;prediction&quot;</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">prediction</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsofexperience&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;basesalary&#39;</span><span class="p">,</span> <span class="s1">&#39;prediction&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------------+--------------------+--------------------+-----------------+------+---------------+----+----------+----------+
+|       company|            location|               level|yearsofexperience|gender|      education|race|basesalary|prediction|
++--------------+--------------------+--------------------+-----------------+------+---------------+----+----------+----------+
+|        INTUIT|Bangalore, KA, India|               Staff|             12.0|    NA|             NA|  NA|  141907.0| 138655.57|
+|      FACEBOOK|      Menlo Park, CA|                  E7|             15.0|  Male|             NA|  NA|  260000.0| 279183.57|
+|       EXPEDIA|         Seattle, WA|                   N|             20.0|  Male|             NA|  NA|  185000.0| 184842.58|
+|        AMAZON|         Seattle, WA|               SDE I|              0.0|  Male|             NA|  NA|  108000.0| 109591.21|
+|        ORACLE|    Redwood City, CA|                  M4|             27.0|    NA|             NA|  NA|  141907.0| 139532.64|
+|          LYFT|   San Francisco, CA|                  T5|              4.0|    NA|             NA|  NA|  192000.0| 190732.75|
+|JPMORGAN CHASE|     Jersey City, NJ|                 601|              3.0|    NA|             NA|  NA|  120000.0| 117469.59|
+|        AMAZON|         Seattle, WA|                  L5|              6.0|  Male|             NA|  NA|  129000.0| 136469.25|
+|        AIRBNB|   San Francisco, CA|                  L3|              0.0|  Male|Master&#39;s Degree|  NA|  130000.0|  132011.4|
+|      LINKEDIN|   San Francisco, CA|Staff Software En...|              6.0|    NA|Master&#39;s Degree|  NA|  205000.0| 198240.34|
++--------------+--------------------+--------------------+-----------------+------+---------------+----+----------+----------+
+only showing top 10 rows
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evaluator</span> <span class="o">=</span> <span class="n">RegressionEvaluator</span><span class="p">(</span>
+    <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;basesalary&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;rmse&quot;</span><span class="p">)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Root Mean Squared Error (RMSE) on test data = </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">rmse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Root Mean Squared Error (RMSE) on test data = 11567.4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-tuning">
+<h2>Model Tuning<a class="headerlink" href="#model-tuning" title="Permalink to this headline">¶</a></h2>
+<p>In the following section, we’ll be looking at using <code class="docutils literal notranslate"><span class="pre">CrossValidator</span></code> to improve the overall performance of model. We’ll also be seeting up a Grid Search problem using <code class="docutils literal notranslate"><span class="pre">ParamGridBuilder</span></code> from <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a> for hyperparameter tuning. These are important steps in model development.</p>
+<p><strong>Important Note:</strong> Running a Grid Search on a CPU will take considerable time to finish, and is generally not advisable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.tuning</span> <span class="k">import</span> <span class="n">CrossValidator</span><span class="p">,</span> <span class="n">ParamGridBuilder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Running this on a CPU is not advisable.</span>
+
+<span class="c1">#Let&#39;s set up our grid search</span>
+<span class="n">paramGrid</span> <span class="o">=</span> <span class="n">ParamGridBuilder</span><span class="p">()</span> \
+    <span class="o">.</span><span class="n">addGrid</span><span class="p">(</span><span class="n">gbt</span><span class="o">.</span><span class="n">maxIter</span><span class="p">,</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">addGrid</span><span class="p">(</span><span class="n">gbt</span><span class="o">.</span><span class="n">maxDepth</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="p">,</span> <span class="mi">30</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">addGrid</span><span class="p">(</span><span class="n">gbt</span><span class="o">.</span><span class="n">stepSize</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">addGrid</span><span class="p">(</span><span class="n">gbt</span><span class="o">.</span><span class="n">subsamplingRate</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span> \
+    <span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+<span class="c1">#Let&#39;s set up our cross validator</span>
+<span class="n">crossval</span> <span class="o">=</span> <span class="n">CrossValidator</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">pipeline</span><span class="p">,</span>
+                         <span class="n">estimatorParamMaps</span> <span class="o">=</span> <span class="n">paramGrid</span><span class="p">,</span>
+                         <span class="n">evaluator</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">,</span>
+                         <span class="n">numFolds</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1">#Fit the model</span>
+<span class="n">cvModel</span> <span class="o">=</span> <span class="n">crossval</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainingData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">cuda</span>
+
+<span class="nd">@cuda</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="s2">&quot;(float32[:], float32[:])&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">out</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">inp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/nvvm.py</span> in <span class="ni">__new__</span><span class="nt">(cls)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>                 <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">126</span>                     <span class="n">inst</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">open_cudalib</span><span class="p">(</span><span class="s1">&#39;nvvm&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>                 <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/libs.py</span> in <span class="ni">open_cudalib</span><span class="nt">(lib)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="n">path</span> <span class="o">=</span> <span class="n">get_cudalib</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">60</span>     <span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> 
+
+<span class="nn">/usr/lib/python3.8/ctypes/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, handle, use_errno, use_last_error, winmode)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">373</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_handle</span> <span class="o">=</span> <span class="n">_dlopen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">OSError</span>: libnvvm.so: cannot open shared object file: No such file or directory
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">NvvmSupportError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">69</span><span class="n">af0a405938</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@cuda.jit</span><span class="p">(</span><span class="s2">&quot;(float32[:], float32[:])&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">i</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">out</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/decorators.py</span> in <span class="ni">kernel_jit</span><span class="nt">(func)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>             <span class="n">targetoptions</span><span class="p">[</span><span class="s1">&#39;opt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">opt</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>             <span class="n">targetoptions</span><span class="p">[</span><span class="s1">&#39;fastmath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fastmath</span>
+<span class="ne">--&gt; </span><span class="mi">101</span>             <span class="k">return</span> <span class="n">Dispatcher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">[</span><span class="n">func_or_sig</span><span class="p">],</span> <span class="n">targetoptions</span><span class="o">=</span><span class="n">targetoptions</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span> 
+<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="k">def</span> <span class="nf">device_jit</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">__init__</span><span class="nt">(self, py_func, sigs, targetoptions)</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sigs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only one signature supported at present&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">936</span>             <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">sigs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_can_compile</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">938</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">compile</span><span class="nt">(self, sig)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_can_compile</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span>                 <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Compilation disabled&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1106</span>             <span class="n">kernel</span> <span class="o">=</span> <span class="n">_Kernel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">py_func</span><span class="p">,</span> <span class="n">argtypes</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1107</span>                              <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">targetoptions</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1108</span>             <span class="c1"># Inspired by _DispatcherBase.add_overload, but differs slightly</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="k">def</span> <span class="nf">_acquire_compile_lock</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>             <span class="k">with</span> <span class="bp">self</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>         <span class="k">return</span> <span class="n">_acquire_compile_lock</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">__init__</span><span class="nt">(self, py_func, argtypes, link, debug, lineinfo, inline, fastmath, extensions, max_registers, opt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span>         <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span> 
+<span class="ne">--&gt; </span><span class="mi">547</span>         <span class="n">cres</span> <span class="o">=</span> <span class="n">compile_cuda</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">py_func</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">void</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">argtypes</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span>                             <span class="n">debug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span>                             <span class="n">lineinfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lineinfo</span><span class="p">,</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="k">def</span> <span class="nf">_acquire_compile_lock</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>             <span class="k">with</span> <span class="bp">self</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>         <span class="k">return</span> <span class="n">_acquire_compile_lock</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">compile_cuda</span><span class="nt">(pyfunc, return_type, args, debug, lineinfo, inline, fastmath, nvvm_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span> 
+<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="c1"># Run compilation pipeline</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="n">cres</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">typingctx</span><span class="o">=</span><span class="n">typingctx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>                                   <span class="n">targetctx</span><span class="o">=</span><span class="n">targetctx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                                   <span class="n">func</span><span class="o">=</span><span class="n">pyfunc</span><span class="p">,</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(typingctx, targetctx, func, args, return_type, flags, locals, library, pipeline_class)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline_class</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span>                               <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(self, func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted</span> <span class="o">=</span> <span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted_from</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="ne">--&gt; </span><span class="mi">428</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_bytecode</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span> 
+<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="k">def</span> <span class="nf">compile_ir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func_ir</span><span class="p">,</span> <span class="n">lifted</span><span class="o">=</span><span class="p">(),</span> <span class="n">lifted_from</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">_compile_bytecode</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span><span class="sd">         assert self.state.func_ir is None</span>
+<span class="ne">--&gt; </span><span class="mi">492</span><span class="sd">         return self._compile_core()</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span><span class="sd">     def _compile_ir(self):</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="sd">                     self.state.status.fail_reason = e</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="sd">                     if is_final_pipeline:</span>
+<span class="ne">--&gt; </span><span class="mi">471</span><span class="sd">                         raise e</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="sd">             else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="sd">                 raise CompilerError(&quot;All available pipelines exhausted&quot;)</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">460</span><span class="sd">                 res = None</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="sd">                 try:</span>
+<span class="ne">--&gt; </span><span class="mi">462</span><span class="sd">                     pm.run(self.state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span><span class="sd">                     if self.state.cr is not None:</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="sd">                         break</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span><span class="sd">                     (self.pipeline_name, pass_desc)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="sd">                 patched_exception = self._patch_error(msg, e)</span>
+<span class="ne">--&gt; </span><span class="mi">343</span><span class="sd">                 raise patched_exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span><span class="sd">     def dependency_analysis(self):</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="sd">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
+<span class="g g-Whitespace">    </span><span class="mi">333</span><span class="sd">                 if isinstance(pass_inst, CompilerPass):</span>
+<span class="ne">--&gt; </span><span class="mi">334</span><span class="sd">                     self._runPass(idx, pass_inst, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span><span class="sd">                 else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span><span class="sd">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">         def _acquire_compile_lock(*args, **kwargs):</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             with self:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span><span class="sd">                 return func(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd">         return _acquire_compile_lock</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">_runPass</span><span class="nt">(self, index, pss, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span><span class="sd">             mutated |= check(pss.run_initialization, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span><span class="sd">         with SimpleTimer() as pass_time:</span>
+<span class="ne">--&gt; </span><span class="mi">289</span><span class="sd">             mutated |= check(pss.run_pass, internal_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span><span class="sd">         with SimpleTimer() as finalize_time:</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span><span class="sd">             mutated |= check(pss.run_finalizer, internal_state)</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">check</span><span class="nt">(func, compiler_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd">         def check(func, compiler_state):</span>
+<span class="ne">--&gt; </span><span class="mi">262</span><span class="sd">             mangled = func(compiler_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span><span class="sd">             if mangled not in (True, False):</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span><span class="sd">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/typed_passes.py</span> in <span class="ni">run_pass</span><span class="nt">(self, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="sd">             with targetctx.push_code_library(library):</span>
+<span class="ne">--&gt; </span><span class="mi">394</span><span class="sd">                 lower = lowering.Lower(targetctx, library, fndesc, interp,</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span><span class="sd">                                        metadata=metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">396</span><span class="sd">                 lower.lower()</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/lowering.py</span> in <span class="ni">__init__</span><span class="nt">(self, context, library, fndesc, func_ir, metadata)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">         # Initialize LLVM</span>
+<span class="ne">---&gt; </span><span class="mi">35</span><span class="sd">         self.module = self.library.create_ir_module(self.fndesc.unique_name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd">         # Python execution environment (will be available to the compiled</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/codegen.py</span> in <span class="ni">create_ir_module</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_finalized</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">575</span>         <span class="n">ir_module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_codegen</span><span class="o">.</span><span class="n">_create_empty_module</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span>         <span class="k">return</span> <span class="n">ir_module</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/codegen.py</span> in <span class="ni">_create_empty_module</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_layout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>             <span class="n">ir_module</span><span class="o">.</span><span class="n">data_layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_layout</span>
+<span class="ne">--&gt; </span><span class="mi">359</span>         <span class="n">nvvm</span><span class="o">.</span><span class="n">add_ir_version</span><span class="p">(</span><span class="n">ir_module</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>         <span class="k">return</span> <span class="n">ir_module</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/nvvm.py</span> in <span class="ni">add_ir_version</span><span class="nt">(mod)</span>
+<span class="g g-Whitespace">    </span><span class="mi">913</span>     <span class="sd">&quot;&quot;&quot;Add NVVM IR version to module&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">914</span>     <span class="n">i32</span> <span class="o">=</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntType</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">915</span>     <span class="k">if</span> <span class="n">NVVM</span><span class="p">()</span><span class="o">.</span><span class="n">is_nvvm70</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">916</span>         <span class="c1"># NVVM IR 1.6, DWARF 3.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">917</span>         <span class="n">ir_versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">i32</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">i32</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">i32</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">i32</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/nvvm.py</span> in <span class="ni">__new__</span><span class="nt">(cls)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>                     <span class="n">errmsg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;libNVVM cannot be found. Do `conda install &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>                               <span class="s2">&quot;cudatoolkit`:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">131</span>                     <span class="k">raise</span> <span class="n">NvvmSupportError</span><span class="p">(</span><span class="n">errmsg</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> 
+<span class="g g-Whitespace">    </span><span class="mi">133</span>                 <span class="c1"># Find &amp; populate functions</span>
+
+<span class="ne">NvvmSupportError</span>: libNVVM cannot be found. Do `conda install cudatoolkit`:
+<span class="n">libnvvm</span><span class="o">.</span><span class="n">so</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">shared</span> <span class="nb">object</span> <span class="nb">file</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">directory</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Impact%20of%20Covid-19%20on%20Salaries%20%26%20Employment.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Impact of Covid-19 on Salaries &amp; Employment</p>
+        </div>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sean Cummins, Lara Murphy<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
