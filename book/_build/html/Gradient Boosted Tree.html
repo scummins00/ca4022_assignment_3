@@ -94,7 +94,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Preliminary%20Data%20Analysis.html">
-   Introduction
+   Preliminary Data Analysis
   </a>
  </li>
  <li class="toctree-l1">
@@ -104,12 +104,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="State%20Level%20Salary%20Comparison.html">
-   Introduction
+   State Level Salary Comparison
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html">
-   Introduction
+   Salary Expectation in Relation to Job Position or Title
   </a>
  </li>
  <li class="toctree-l1">
@@ -623,215 +623,6 @@ only showing top 10 rows
 
 <span class="c1">#Fit the model</span>
 <span class="n">cvModel</span> <span class="o">=</span> <span class="n">crossval</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainingData</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">cuda</span>
-
-<span class="nd">@cuda</span><span class="o">.</span><span class="n">jit</span><span class="p">(</span><span class="s2">&quot;(float32[:], float32[:])&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">out</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
-        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">inp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/nvvm.py</span> in <span class="ni">__new__</span><span class="nt">(cls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>                 <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">126</span>                     <span class="n">inst</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">open_cudalib</span><span class="p">(</span><span class="s1">&#39;nvvm&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>                 <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/libs.py</span> in <span class="ni">open_cudalib</span><span class="nt">(lib)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="n">path</span> <span class="o">=</span> <span class="n">get_cudalib</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">60</span>     <span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span> 
-
-<span class="nn">/usr/lib/python3.8/ctypes/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, handle, use_errno, use_last_error, winmode)</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="k">if</span> <span class="n">handle</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">373</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_handle</span> <span class="o">=</span> <span class="n">_dlopen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">OSError</span>: libnvvm.so: cannot open shared object file: No such file or directory
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">NvvmSupportError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">69</span><span class="n">af0a405938</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@cuda.jit</span><span class="p">(</span><span class="s2">&quot;(float32[:], float32[:])&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">out</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">i</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">out</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/decorators.py</span> in <span class="ni">kernel_jit</span><span class="nt">(func)</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>             <span class="n">targetoptions</span><span class="p">[</span><span class="s1">&#39;opt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">opt</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span>             <span class="n">targetoptions</span><span class="p">[</span><span class="s1">&#39;fastmath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fastmath</span>
-<span class="ne">--&gt; </span><span class="mi">101</span>             <span class="k">return</span> <span class="n">Dispatcher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">[</span><span class="n">func_or_sig</span><span class="p">],</span> <span class="n">targetoptions</span><span class="o">=</span><span class="n">targetoptions</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span> 
-<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="k">def</span> <span class="nf">device_jit</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">__init__</span><span class="nt">(self, py_func, sigs, targetoptions)</span>
-<span class="g g-Whitespace">    </span><span class="mi">934</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sigs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only one signature supported at present&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">936</span>             <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">sigs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">937</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_can_compile</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">938</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">compile</span><span class="nt">(self, sig)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_can_compile</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span>                 <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Compilation disabled&quot;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1106</span>             <span class="n">kernel</span> <span class="o">=</span> <span class="n">_Kernel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">py_func</span><span class="p">,</span> <span class="n">argtypes</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span>                              <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">targetoptions</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>             <span class="c1"># Inspired by _DispatcherBase.add_overload, but differs slightly</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="k">def</span> <span class="nf">_acquire_compile_lock</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>             <span class="k">with</span> <span class="bp">self</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>         <span class="k">return</span> <span class="n">_acquire_compile_lock</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">__init__</span><span class="nt">(self, py_func, argtypes, link, debug, lineinfo, inline, fastmath, extensions, max_registers, opt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span>         <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span> 
-<span class="ne">--&gt; </span><span class="mi">547</span>         <span class="n">cres</span> <span class="o">=</span> <span class="n">compile_cuda</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">py_func</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">void</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">argtypes</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">548</span>                             <span class="n">debug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span>                             <span class="n">lineinfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">lineinfo</span><span class="p">,</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="k">def</span> <span class="nf">_acquire_compile_lock</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>             <span class="k">with</span> <span class="bp">self</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>         <span class="k">return</span> <span class="n">_acquire_compile_lock</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/compiler.py</span> in <span class="ni">compile_cuda</span><span class="nt">(pyfunc, return_type, args, debug, lineinfo, inline, fastmath, nvvm_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> 
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="c1"># Run compilation pipeline</span>
-<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="n">cres</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">typingctx</span><span class="o">=</span><span class="n">typingctx</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span>                                   <span class="n">targetctx</span><span class="o">=</span><span class="n">targetctx</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>                                   <span class="n">func</span><span class="o">=</span><span class="n">pyfunc</span><span class="p">,</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(typingctx, targetctx, func, args, return_type, flags, locals, library, pipeline_class)</span>
-<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline_class</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">685</span>                               <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">687</span> 
-<span class="g g-Whitespace">    </span><span class="mi">688</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">compile_extra</span><span class="nt">(self, func)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span>         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted</span> <span class="o">=</span> <span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted_from</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="ne">--&gt; </span><span class="mi">428</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_bytecode</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">429</span> 
-<span class="g g-Whitespace">    </span><span class="mi">430</span>     <span class="k">def</span> <span class="nf">compile_ir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func_ir</span><span class="p">,</span> <span class="n">lifted</span><span class="o">=</span><span class="p">(),</span> <span class="n">lifted_from</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">_compile_bytecode</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span><span class="sd">         assert self.state.func_ir is None</span>
-<span class="ne">--&gt; </span><span class="mi">492</span><span class="sd">         return self._compile_core()</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span><span class="sd">     def _compile_ir(self):</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="sd">                     self.state.status.fail_reason = e</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="sd">                     if is_final_pipeline:</span>
-<span class="ne">--&gt; </span><span class="mi">471</span><span class="sd">                         raise e</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span><span class="sd">             else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span><span class="sd">                 raise CompilerError(&quot;All available pipelines exhausted&quot;)</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler.py</span> in <span class="ni">_compile_core</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span><span class="sd">                 res = None</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="sd">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">462</span><span class="sd">                     pm.run(self.state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span><span class="sd">                     if self.state.cr is not None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span><span class="sd">                         break</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span><span class="sd">                     (self.pipeline_name, pass_desc)</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="sd">                 patched_exception = self._patch_error(msg, e)</span>
-<span class="ne">--&gt; </span><span class="mi">343</span><span class="sd">                 raise patched_exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span><span class="sd">     def dependency_analysis(self):</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">run</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="sd">                 pass_inst = _pass_registry.get(pss).pass_inst</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span><span class="sd">                 if isinstance(pass_inst, CompilerPass):</span>
-<span class="ne">--&gt; </span><span class="mi">334</span><span class="sd">                     self._runPass(idx, pass_inst, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span><span class="sd">                 else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">336</span><span class="sd">                     raise BaseException(&quot;Legacy pass in use&quot;)</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_lock.py</span> in <span class="ni">_acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">         def _acquire_compile_lock(*args, **kwargs):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             with self:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span><span class="sd">                 return func(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd">         return _acquire_compile_lock</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">_runPass</span><span class="nt">(self, index, pss, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">287</span><span class="sd">             mutated |= check(pss.run_initialization, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span><span class="sd">         with SimpleTimer() as pass_time:</span>
-<span class="ne">--&gt; </span><span class="mi">289</span><span class="sd">             mutated |= check(pss.run_pass, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span><span class="sd">         with SimpleTimer() as finalize_time:</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span><span class="sd">             mutated |= check(pss.run_finalizer, internal_state)</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/compiler_machinery.py</span> in <span class="ni">check</span><span class="nt">(func, compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd">         def check(func, compiler_state):</span>
-<span class="ne">--&gt; </span><span class="mi">262</span><span class="sd">             mangled = func(compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span><span class="sd">             if mangled not in (True, False):</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span><span class="sd">                 msg = (&quot;CompilerPass implementations should return True/False. &quot;</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/typed_passes.py</span> in <span class="ni">run_pass</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span><span class="sd">             with targetctx.push_code_library(library):</span>
-<span class="ne">--&gt; </span><span class="mi">394</span><span class="sd">                 lower = lowering.Lower(targetctx, library, fndesc, interp,</span>
-<span class="g g-Whitespace">    </span><span class="mi">395</span><span class="sd">                                        metadata=metadata)</span>
-<span class="g g-Whitespace">    </span><span class="mi">396</span><span class="sd">                 lower.lower()</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/lowering.py</span> in <span class="ni">__init__</span><span class="nt">(self, context, library, fndesc, func_ir, metadata)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">         # Initialize LLVM</span>
-<span class="ne">---&gt; </span><span class="mi">35</span><span class="sd">         self.module = self.library.create_ir_module(self.fndesc.unique_name)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd">         # Python execution environment (will be available to the compiled</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/core/codegen.py</span> in <span class="ni">create_ir_module</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_finalized</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">575</span>         <span class="n">ir_module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_codegen</span><span class="o">.</span><span class="n">_create_empty_module</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span>         <span class="k">return</span> <span class="n">ir_module</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/codegen.py</span> in <span class="ni">_create_empty_module</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_layout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span>             <span class="n">ir_module</span><span class="o">.</span><span class="n">data_layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_layout</span>
-<span class="ne">--&gt; </span><span class="mi">359</span>         <span class="n">nvvm</span><span class="o">.</span><span class="n">add_ir_version</span><span class="p">(</span><span class="n">ir_module</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>         <span class="k">return</span> <span class="n">ir_module</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/nvvm.py</span> in <span class="ni">add_ir_version</span><span class="nt">(mod)</span>
-<span class="g g-Whitespace">    </span><span class="mi">913</span>     <span class="sd">&quot;&quot;&quot;Add NVVM IR version to module&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">914</span>     <span class="n">i32</span> <span class="o">=</span> <span class="n">ir</span><span class="o">.</span><span class="n">IntType</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">915</span>     <span class="k">if</span> <span class="n">NVVM</span><span class="p">()</span><span class="o">.</span><span class="n">is_nvvm70</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">916</span>         <span class="c1"># NVVM IR 1.6, DWARF 3.0</span>
-<span class="g g-Whitespace">    </span><span class="mi">917</span>         <span class="n">ir_versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">i32</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">i32</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">i32</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">i32</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/numba/cuda/cudadrv/nvvm.py</span> in <span class="ni">__new__</span><span class="nt">(cls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>                     <span class="n">errmsg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;libNVVM cannot be found. Do `conda install &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>                               <span class="s2">&quot;cudatoolkit`:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">131</span>                     <span class="k">raise</span> <span class="n">NvvmSupportError</span><span class="p">(</span><span class="n">errmsg</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> 
-<span class="g g-Whitespace">    </span><span class="mi">133</span>                 <span class="c1"># Find &amp; populate functions</span>
-
-<span class="ne">NvvmSupportError</span>: libNVVM cannot be found. Do `conda install cudatoolkit`:
-<span class="n">libnvvm</span><span class="o">.</span><span class="n">so</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">shared</span> <span class="nb">object</span> <span class="nb">file</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">directory</span>
 </pre></div>
 </div>
 </div>

@@ -219,21 +219,3 @@ crossval = CrossValidator(estimator=pipeline,
 #Fit the model
 cvModel = crossval.fit(trainingData)
 
-
-# In[17]:
-
-
-from numba import cuda
-
-@cuda.jit("(float32[:], float32[:])")
-def foo(inp, out):
-    i = cuda.grid(1)
-    if i< out.size:
-        out[i] - inp[i] ** 2
-
-
-# In[ ]:
-
-
-
-
