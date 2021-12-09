@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: 'Preliminary Data Analysis'
+- file: 'Impact of Social Factors on Salary'
+- file: 'State Level Salary Comparison'
+- file: Salary Expectation in Relation to Job Position'
+- file: Impact of Covid-19 on Salaries & Employment'
