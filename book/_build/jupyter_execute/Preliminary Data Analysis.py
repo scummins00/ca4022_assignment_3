@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Introduction
+# # IPreliminary Data Analysis
 # The following jupyter notebook aims to perform some preliminary data analysis for our STEM (Science, Technology, Engineering, Math) dataset which can be found [Here](https://www.kaggle.com/jackogozaly/data-science-and-stem-salaries) . We will perform the following tasks:
 # * **Missing Values**
 #     * Test for missing values 

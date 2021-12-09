@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Introduction
+# # State Level Salary Comparison
 # In this notebook, we will be breaking down the salary expectation of *Science*, *Technology*, *Engineering*, and *Mathematics* (STEM) related positions. We will be performing this analysis by using a dataset [available online](https://www.kaggle.com/jackogozaly/data-science-and-stem-salaries).
 # 
 # Specifically, we will be comparing the salaries of STEM related positions at a state-level. We have certain expectations going into this analysis, such as California having a higher average salary than other states.

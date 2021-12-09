@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Introduction
+# # Salary Expectation in Relation to Job Position or Title
 # In the following notebook, we will be examining the relationship between expected income and job position. We do not feel the need to prove that in general, your salary has a direct relation to your title and job position. Therefore, we hope that our data emulates this expected result.
 # 
 # We'll be taking a look at not only the expected salary of positions over time. From this, we can infer positions with high fluctuation in total compensation over time, as well as positions that remain relatively stable. We can also understand which positions receive high total compensation in general. We expect that managerial positions will receive higher total compensation, as they require more experience generally.
