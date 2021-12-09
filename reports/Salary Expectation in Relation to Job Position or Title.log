@@ -77,6 +77,6 @@ data.show(n=5)
 [0m[1;32m    118[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    119[0m                 [0;32mraise[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mAnalysisException[0m: Path does not exist: file:/home/seanc/ca4022_assignment_3/book/data/seperated_time_data/cleaned.txt
-AnalysisException: Path does not exist: file:/home/seanc/ca4022_assignment_3/book/data/seperated_time_data/cleaned.txt
+[0;31mAnalysisException[0m: Path does not exist: file:/home/seanc/ca4022_assignment_3/docs/book/data/seperated_time_data/cleaned.txt
+AnalysisException: Path does not exist: file:/home/seanc/ca4022_assignment_3/docs/book/data/seperated_time_data/cleaned.txt
 
