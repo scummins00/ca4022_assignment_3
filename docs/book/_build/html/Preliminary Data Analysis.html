@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; CA4022 Assignment 3</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Impact of Social Factors on Salary" href="Impact%20of%20Social%20Factors%20on%20Salary.html" />
+    <link rel="prev" title="Intro" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">CA4022 Assignment 3</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Impact%20of%20Social%20Factors%20on%20Salary.html">
+   Impact of Social Factors on Salary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="State%20Level%20Salary%20Comparison.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Impact%20of%20Covid-19%20on%20Salaries%20%26%20Employment.html">
+   Impact of Covid-19 on Salaries &amp; Employment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Gradient%20Boosted%20Tree.html">
+   Gradient Boosted Tree
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Preliminary Data Analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://scummins00.github.io/ca4022_assignment_3/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://scummins00.github.io/ca4022_assignment_3//issues/new?title=Issue%20on%20page%20%2FPreliminary Data Analysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#missing-values">
+   Missing Values
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#findings">
+     Findings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-distribution">
+   Data Distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Findings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#considerations-for-future-analysis">
+     Considerations for Future Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The following jupyter notebook aims to perform some preliminary data analysis for our STEM (Science, Technology, Engineering, Math) dataset which can be found <a class="reference external" href="https://www.kaggle.com/jackogozaly/data-science-and-stem-salaries">Here</a> . We will perform the following tasks:</p>
+<ul class="simple">
+<li><p><strong>Missing Values</strong></p>
+<ul>
+<li><p>Test for missing values</p></li>
+<li><p>Understand where missing values occur</p></li>
+<li><p>Understand the impact of missing values</p></li>
+</ul>
+</li>
+<li><p><strong>Data Distribution</strong></p>
+<ul>
+<li><p>How many companies?</p></li>
+<li><p>Most represented companies</p></li>
+<li><p>Distribution of people across America</p></li>
+<li><p>Gender ratios</p></li>
+<li><p>Ethnicity ratios</p></li>
+<li><p>Understand the average salary</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/Levels_Fyi_Salary_Data.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">98</span><span class="n">d0dd94aa51</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/Levels_Fyi_Salary_Data.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span> 
+<span class="ne">--&gt; </span><span class="mi">586</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span> 
+<span class="g g-Whitespace">    </span><span class="mi">588</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span> 
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span> 
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">809</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">810</span> 
+<span class="ne">--&gt; </span><span class="mi">811</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">812</span> 
+<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1038</span>             <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1040</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1041</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1042</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> 
+<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="c1"># open handles</span>
+<span class="ne">---&gt; </span><span class="mi">51</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> 
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/base_parser.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHandles</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">222</span><span class="s2">         self.handles = get_handle(</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span><span class="s2">             src,</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">             &quot;r&quot;,</span>
+
+<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="s2">         if ioargs.encoding and &quot;b&quot; not in ioargs.mode:</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2">             # Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">702</span><span class="s2">             handle = open(</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">                 handle,</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">                 ioargs.mode,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/Levels_Fyi_Salary_Data.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="missing-values">
+<h2>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s find the portion of data with missing values with respect to each column</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">tot_missing</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">tot</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Column: </span><span class="se">\&quot;</span><span class="si">{col}</span><span class="se">\&quot;</span><span class="s1"> | Total Missing: </span><span class="si">{tot_missing}</span><span class="s1"> | Missing: {(tot_missing/tot)*100:.2f}%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column: &quot;timestamp&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;company&quot; | Total Missing: 5 | Missing: 0.01%
+Column: &quot;level&quot; | Total Missing: 119 | Missing: 0.19%
+Column: &quot;title&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;totalyearlycompensation&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;location&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;yearsofexperience&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;yearsatcompany&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;tag&quot; | Total Missing: 854 | Missing: 1.36%
+Column: &quot;basesalary&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;stockgrantvalue&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;bonus&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;gender&quot; | Total Missing: 19540 | Missing: 31.19%
+Column: &quot;otherdetails&quot; | Total Missing: 22505 | Missing: 35.93%
+Column: &quot;cityid&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;dmaid&quot; | Total Missing: 2 | Missing: 0.00%
+Column: &quot;rowNumber&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Masters_Degree&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Bachelors_Degree&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Doctorate_Degree&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Highschool&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Some_College&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Race_Asian&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Race_White&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Race_Two_Or_More&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Race_Black&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Race_Hispanic&quot; | Total Missing: 0 | Missing: 0.00%
+Column: &quot;Race&quot; | Total Missing: 40215 | Missing: 64.20%
+Column: &quot;Education&quot; | Total Missing: 32272 | Missing: 51.52%
+</pre></div>
+</div>
+</div>
+</div>
+<p>Analysis of missing values in the data reveal that overall, information on general aspects of a subject’s job such as salary, experience, company, level, etc, are consistently made available, whilst highly personal subject information which is considered sensitive, is often kept private. Features with significant missing values include:</p>
+<ul class="simple">
+<li><p>Race - <strong>64.2% Missing</strong></p></li>
+<li><p>Education - <strong>51.5% Missing</strong></p></li>
+<li><p>Gender - <strong>31.2% Missing</strong></p></li>
+</ul>
+<p>The feature ‘otherdetails’ is missing 35.9% of the time. Let’s investigate the significance of this feature further:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s display some values in the &#39;otherdetails&#39; column</span>
+<span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;otherdetails&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;&quot;Near Boston&quot; was considered a middle pay grade at Mozilla (Remote), Race: White, Academic Level: Some college coursework completed&#39;,
+       &#39;&quot;Stock grant&quot; amount reflects how much I\&#39;ll vest this year, Race: Asian, Academic Level: Master’s degree&#39;,
+       &#39;&quot;bonus&quot; is on call pay - Masters&#39;, ...,
+       &#39;“Staff Solutions Consultant”&#39;,
+       &#39;€3k signing bonus, 1500 stocks grant, Title: Backend Engineer, Academic Level: Bachelor’s degree&#39;,
+       &#39;€4k Relocation bonus, Race: Asian, Academic Level: Master’s degree&#39;],
+      dtype=&#39;&lt;U762&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It appears relevant information is being displayed in the ‘otherdetails’ column. We should investigate if Race information for users can be found in ‘otherdetails’ that can’t be found in ‘race’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s investigate the &#39;type&#39; of values found in each column</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Column: &quot;</span><span class="si">{col}</span><span class="s1">&quot; | Type: {type(df[col][0])}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Column: &quot;timestamp&quot; | Type: &lt;class &#39;str&#39;&gt;
+Column: &quot;company&quot; | Type: &lt;class &#39;str&#39;&gt;
+Column: &quot;level&quot; | Type: &lt;class &#39;str&#39;&gt;
+Column: &quot;title&quot; | Type: &lt;class &#39;str&#39;&gt;
+Column: &quot;totalyearlycompensation&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;location&quot; | Type: &lt;class &#39;str&#39;&gt;
+Column: &quot;yearsofexperience&quot; | Type: &lt;class &#39;numpy.float64&#39;&gt;
+Column: &quot;yearsatcompany&quot; | Type: &lt;class &#39;numpy.float64&#39;&gt;
+Column: &quot;tag&quot; | Type: &lt;class &#39;float&#39;&gt;
+Column: &quot;basesalary&quot; | Type: &lt;class &#39;numpy.float64&#39;&gt;
+Column: &quot;stockgrantvalue&quot; | Type: &lt;class &#39;numpy.float64&#39;&gt;
+Column: &quot;bonus&quot; | Type: &lt;class &#39;numpy.float64&#39;&gt;
+Column: &quot;gender&quot; | Type: &lt;class &#39;float&#39;&gt;
+Column: &quot;otherdetails&quot; | Type: &lt;class &#39;float&#39;&gt;
+Column: &quot;cityid&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;dmaid&quot; | Type: &lt;class &#39;numpy.float64&#39;&gt;
+Column: &quot;rowNumber&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Masters_Degree&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Bachelors_Degree&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Doctorate_Degree&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Highschool&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Some_College&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Race_Asian&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Race_White&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Race_Two_Or_More&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Race_Black&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Race_Hispanic&quot; | Type: &lt;class &#39;numpy.int64&#39;&gt;
+Column: &quot;Race&quot; | Type: &lt;class &#39;float&#39;&gt;
+Column: &quot;Education&quot; | Type: &lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s strange that our 4 columns missing the most values, namely: ‘<em>otherdetails</em>’,’<em>gender</em>’, ‘<em>race</em>’, and ‘<em>education</em>’ are all of type ‘float’ despite actually being ‘string’ values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s see if information that can&#39;t be found in other columns can be found in &#39;otherdetails&#39;</span>
+<span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s1">&#39;Race&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">otherdetails</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">Race</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">:</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;Academic Level&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">otherdetails</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">Education</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">:</span>
+            <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#let&#39;s look at Race information retained in &#39;otherdetails&#39; not found in &#39;Race&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">otherdetails</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">tot_race</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Number of rows with NaN in </span><span class="se">\&#39;</span><span class="s1">Race</span><span class="se">\&#39;</span><span class="s1"> but race info in </span><span class="se">\&#39;</span><span class="s1">otherdetails</span><span class="se">\&#39;</span><span class="s1">: {len(c)}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Portion accounted for: {(len(d)/tot_race)*100:.2f}%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Race: American Indian or Alaska Native, Academic Level: Bachelor’s degree
+
+Number of rows with NaN in &#39;Race&#39; but race info in &#39;otherdetails&#39;: 102
+Portion accounted for: 1.13%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#let&#39;s look at education information retained in &#39;otherdetails&#39; not found in &#39;Education&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">200</span><span class="p">]</span><span class="o">.</span><span class="n">otherdetails</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="n">tot_ed</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Education&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Number of rows with NaN in </span><span class="se">\&#39;</span><span class="s1">Education</span><span class="se">\&#39;</span><span class="s1"> but education info in </span><span class="se">\&#39;</span><span class="s1">otherdetails</span><span class="se">\&#39;</span><span class="s1">: {len(d)}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Portion accounted for: {(len(d)/tot_ed)*100:.2f}%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title: Program Manager I, Race: White, Academic Level: Technical or occupational certificate
+
+Number of rows with NaN in &#39;Education&#39; but education info in &#39;otherdetails&#39;: 254
+Portion accounted for: 0.84%
+</pre></div>
+</div>
+</div>
+</div>
+<section id="findings">
+<h3>Findings<a class="headerlink" href="#findings" title="Permalink to this headline">¶</a></h3>
+<p>We can see that the portion of missing information in ‘education’ and ‘race’ that can be accounted for in ‘otherdetails’ is less than <strong>2%</strong>. The information is displayed in an unstructured manner, meaning extraction would take considerable effort involving complex string matching functions.</p>
+<p>There is a <strong>considerable</strong> amount of information missing for subjects regarding ‘education’, ‘gender’, and ‘race’. Through investigation, we conclude that this is an intrinsic property of the data, and is not caused by error. Cases where ‘education’, and ‘race’ information can be found in ‘otherdetails’ and not in the correct column can be considered edge cases that do not fit into a “regular” category. This can be seen in the example above in which a subject describes their race as ‘American Indian or Alaska Native’, which is clearly not ‘Asian’, ‘Hispanic’, ‘Black’, or ‘White’. As this data was scraped, it is likely that edge cases were not accounted for.</p>
+<p>The same can be said for ‘academic level’. Subjects describing their academic level as ‘Associate Degree’ or ‘Technical or occupational certificate’ do not fall under categories of ‘Bachelors Degree’, ‘Masters Degree’, ‘PhD’, or ‘Doctorate’.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="data-distribution">
+<h2>Data Distribution<a class="headerlink" href="#data-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#How many unique companies do we have</span>
+<span class="n">num_comp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;company&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;There are a total of: </span><span class="si">{num_comp}</span><span class="s1"> unique companies&#39;</span><span class="p">)</span> 
+
+<span class="c1">#Which company is most prevelant</span>
+<span class="n">comps</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span>  <span class="n">df</span><span class="p">[</span><span class="s1">&#39;company&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">comps</span><span class="p">:</span>
+        <span class="n">comps</span><span class="p">[</span><span class="n">comp</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">comps</span><span class="p">[</span><span class="n">comp</span><span class="p">]</span> <span class="o">=</span> <span class="n">comps</span><span class="p">[</span><span class="n">comp</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are a total of: 1632 unique companies
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Top 10 companies represented in this data</span>
+<span class="n">sorted_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">comps</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())[:</span><span class="mi">11</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())[:</span><span class="mi">11</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Top 10 Companies Represented&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Company&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Entries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Preliminary Data Analysis_16_0.png" src="_images/Preliminary Data Analysis_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s better understand our distribution of people across states</span>
+<span class="n">states</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">state</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">])])</span>
+<span class="n">num_states</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">states</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;There are a total of: </span><span class="si">{num_states}</span><span class="s1"> unique states&#39;</span><span class="p">)</span> 
+
+<span class="c1">#Which state is most prevelant</span>
+<span class="n">state_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">state_dict</span><span class="p">:</span>
+        <span class="n">state_dict</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">state_dict</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are a total of: 129 unique states
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Top 10 states represented in this data</span>
+<span class="n">sorted_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">state_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())[:</span><span class="mi">11</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())[:</span><span class="mi">11</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Top 10 States Represented&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Entries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Preliminary Data Analysis_18_0.png" src="_images/Preliminary Data Analysis_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Number of rows containing Ireland</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;Ireland&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(326, 29)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected, the global tech corporations such as Amazon, Microsoft, and Google represent the vaste majority of subjects collected in this data. As well as that, California and Washington represent the majority states represented in this data.</p>
+<p>Unexpectedly, this data holds information of subjetcs working outside of America. This opens a new opportunity to compare salaries between Americans and Europeans with similar job positions. Interestingly, <strong>326 subjects claim to work in Ireland</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s see the ethnic makeup of our data</span>
+
+<span class="c1">#Which races are over and under represented</span>
+<span class="n">races</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">race</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">race</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">races</span><span class="p">:</span>
+        <span class="n">races</span><span class="p">[</span><span class="n">race</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">races</span><span class="p">[</span><span class="n">race</span><span class="p">]</span> <span class="o">=</span> <span class="n">races</span><span class="p">[</span><span class="n">race</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ethnicity distribution</span>
+<span class="n">sorted_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">races</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">)),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ethnic Representation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ethnicity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Entries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Preliminary Data Analysis_22_0.png" src="_images/Preliminary Data Analysis_22_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s see the gender makeup of our data</span>
+
+<span class="n">genders</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">gender</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">gender</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">genders</span><span class="p">:</span>
+        <span class="n">genders</span><span class="p">[</span><span class="n">gender</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">genders</span><span class="p">[</span><span class="n">gender</span><span class="p">]</span> <span class="o">=</span> <span class="n">genders</span><span class="p">[</span><span class="n">gender</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ethnicity distribution</span>
+<span class="n">sorted_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">genders</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">sorted_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gender Representation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Entries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Preliminary Data Analysis_24_0.png" src="_images/Preliminary Data Analysis_24_0.png" />
+</div>
+</div>
+<p>From these graph we can see that Hispanic and Black subjects are under-represented in this dataset. Asian and White subjects make up the majority of users. In future analysis, these factors should be accounted for. To be precise, inference on base salary with respect to black or hispanic subjects should <strong>not</strong> be considered accurate.</p>
+<p>As well as this, females and other sexes are highly under-represented in comparison to males. Again, this should be accounted for.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Remove salaries equating to 0 and divide them by 1000 for presentability</span>
+<span class="n">sal</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;basesalary&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mf">0.0</span><span class="p">][</span><span class="s1">&#39;basesalary&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">sal</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    60338.000000
+mean       141.906670
+std         56.296747
+min          1.000000
+25%        110.000000
+50%        141.000000
+75%        170.000000
+max       1659.870000
+Name: basesalary, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now let&#39;s finally understand the average Salary</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sal</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Salary in Thousands&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Proportion&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of Base Salary&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Preliminary Data Analysis_27_0.png" src="_images/Preliminary Data Analysis_27_0.png" />
+</div>
+</div>
+<section id="id1">
+<h3>Findings<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>In our data distribution analysis we found that fristly, the multinational conglomerate tech corporations are highly over represented. This is to be expected because of the sheer volume of employees they have. We also find that California, America’s ‘Tech Capital’ and home to Silicon Valley, is also highly over represented, which again, is expected. It was interesting to find that not only American states are found in this data. Various European countries including Ireland, have multiple entries.</p>
+<p>Following from this, we analysed the representation of ethnicities and sex. We find that black and hispanic subjects are poorly represented in this data, whilst asian and white subjects are highly represented. We note that these factors should be accounted for when making any future inference regarding ethnicity. Males are overly represented in comparison to females and other sexes. This is an issue regularly identified in data of this nature. Unfortunately, all of the biases above are intrinsic properties of our dataset.</p>
+<p>We conclude our analysis by examining the overall distribution of base salary. The mean salary is 141,000 dollars which is roughly 123,000 Euro. This figure is quite high. Again, this value may be skewed by the over-representation of companies, sexes, and ethnicities. In our case, this figure may not represent exepected salary for under-represented companies, and minorities. The distribution is somewhat right skewed, meaning there are outliers receiving much higher salaries. The highest earner has a base salary of 1,659,000, or 1.6 million dollars.</p>
+</section>
+<section id="considerations-for-future-analysis">
+<h3>Considerations for Future Analysis<a class="headerlink" href="#considerations-for-future-analysis" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Understand that in this analysis, the type values for columns appear to be inconsistent.</p></li>
+<li><p>Understand the high quantity of missing values examined above</p></li>
+<li><p>Understand the distribution of data and the under-representation of minorities.</p></li>
+<li><p>Be aware that many entries have salary as 0. It is unclear why this is</p></li>
+<li><p>Understand that the data includes employees outside of The United States</p></li>
+<li><p>As we are planning to use CatBoost, categorical variables are more valuable to us than One-hot encoded vectors. You should consider removing one-hot encoded vectors for simplicity.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Impact%20of%20Social%20Factors%20on%20Salary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Impact of Social Factors on Salary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Sean Cummins, Lara Murphy<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
