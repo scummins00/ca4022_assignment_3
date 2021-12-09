@@ -4,8 +4,9 @@
 format: jb-book
 root: intro
 chapters:
-- file: 'Preliminary Data Analysis'
-- file: 'Impact of Social Factors on Salary'
-- file: 'State Level Salary Comparison'
-- file: Salary Expectation in Relation to Job Position'
-- file: Impact of Covid-19 on Salaries & Employment'
+- file: Preliminary Data Analysis
+- file: Impact of Social Factors on Salary
+- file: State Level Salary Comparison
+- file: Salary Expectation in Relation to Job Position or Title
+- file: Impact of Covid-19 on Salaries & Employment
+- file: Gradient Boosted Tree
