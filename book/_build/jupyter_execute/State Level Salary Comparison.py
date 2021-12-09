@@ -156,10 +156,22 @@ fig.update_layout(
     title_text = '2017 to 2021 US STEM Related Positions Average Annual Compensation by State',
     geo_scope='usa', # limite map scope to USA
 )
+fig.write_image("../Graph Outputs/us-states.png")
 fig
 
 
+# In[13]:
+
+
+from IPython.display import Image
+PATH = "../Graph Outputs/us-states.png"
+Image(filename=PATH, width=900)
+
+
 # ### Graph Analysis
+# 
+# **NOTE** We cannot display the interactive Plotly graph, so instead we will display a static png.
+# 
 # It's interesting to note that two states are missing from our data:
 # 1. South Dakota (SD)
 # 2. Alaska (AK)
@@ -173,7 +185,7 @@ fig
 # # Rest of the World
 # Let's now do a similar analysis with respect to the non-American states, countries, and cities within our dataset. To get our data, we just want the opposite of items found in the `states` list variable. However, as the locations are more complex, we'll need to further investigate.
 
-# In[13]:
+# In[14]:
 
 
 #Split our location data into an array
@@ -189,7 +201,7 @@ european_data = european_data.withColumn('country',european_data['loc_array'][2]
 european_data.show(n=2)
 
 
-# In[14]:
+# In[15]:
 
 
 #Let's groupby country
@@ -202,7 +214,7 @@ other_averages = european_data['country', 'location', 'totalyearlycompensation',
 other_averages_df = spark.createDataFrame(other_averages)
 
 
-# In[15]:
+# In[16]:
 
 
 #Now we want to round all our values to 1 decimal place
@@ -217,7 +229,7 @@ other_averages_df.show(n=5)
 # 
 # As before, we must convert our dataframe to a pandas dataframe object to use matplotlib
 
-# In[16]:
+# In[17]:
 
 
 #Convert to pandas
@@ -226,7 +238,7 @@ pandasdf2.rename(columns={'avg(totalyearlycompensation)':'total comp', 'avg(base
        'avg(stockgrantvalue)':'sg value', 'avg(bonus)':'bonus'}, inplace=True)
 
 
-# In[17]:
+# In[18]:
 
 
 #Let's make a scatterplot
@@ -247,13 +259,13 @@ plt.show()
 # 
 # In the below cell, we see that this country is Saudi Arabia. Saudi Arabia is a wealthy country, and is currently experience an economic boom. Therefore, it's not surprising that the salaries and bonuses in Saudi Arabia are high.
 
-# In[18]:
+# In[19]:
 
 
 pandasdf2.sort_values(by='bonus', ascending=False).head(1)
 
 
-# In[19]:
+# In[20]:
 
 
 import seaborn as sns
@@ -294,14 +306,14 @@ sns.despine(left=True, bottom=True)
 # 
 # Following on from this find, we will redefine our dataset to include only countries with more than 5 entries. Let's see how this changes our visualisation.
 
-# In[20]:
+# In[21]:
 
 
 #Check how many instances register Marshall Islands as locaiton
 european_data.filter(european_data.country == 'Marshall Islands').collect()
 
 
-# In[21]:
+# In[22]:
 
 
 #Count the number of appearances for each countr
@@ -317,13 +329,13 @@ counts = spark.createDataFrame(counts)
 new_european_data = other_averages_df.join(counts, on='country')
 
 
-# In[22]:
+# In[23]:
 
 
 new_european_data.show(n=2)
 
 
-# In[23]:
+# In[24]:
 
 
 #For a final step let's filter out countries with less than 5 entries
@@ -331,7 +343,7 @@ new_european_data = new_european_data.filter(new_european_data['count'] > 4).col
 new_european_data = spark.createDataFrame(new_european_data)
 
 
-# In[24]:
+# In[25]:
 
 
 #Convert to pandas and plot
@@ -340,7 +352,7 @@ pandasdf3.rename(columns={'avg(totalyearlycompensation)':'total comp', 'avg(base
        'avg(stockgrantvalue)':'sg value', 'avg(bonus)':'bonus'}, inplace=True)
 
 
-# In[25]:
+# In[26]:
 
 
 import seaborn as sns
@@ -388,7 +400,7 @@ sns.despine(left=True, bottom=True)
 # ## United States VS Rest of World
 # Let's do one final comparison of the United States versus the rest of the world with respect to STEM related positions. We will make an overlapping barchart comparing the top 6 US states to the top 5 countries from the rest of the world also including Ireland.
 
-# In[26]:
+# In[27]:
 
 
 #get rest of world top 5 countries
@@ -421,13 +433,13 @@ row_top_5.drop(columns=['count'], inplace=True)
 concated = pd.concat([row_top_5, us_top_6], axis=0)
 
 
-# In[27]:
+# In[28]:
 
 
 concated
 
 
-# In[28]:
+# In[29]:
 
 
 # Draw a nested barplot by species and sex
