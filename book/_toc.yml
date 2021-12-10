@@ -2,8 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: Preliminary Data Analysis
+root: introduction
 chapters:
+- file: Preliminary Data Analysis
 - file: Impact of Social Factors on Salary
 - file: State Level Salary Comparison
 - file: Salary Expectation in Relation to Job Position or Title
