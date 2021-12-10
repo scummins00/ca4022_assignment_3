@@ -26,13 +26,13 @@ import matplotlib.pyplot as plt
 # In[2]:
 
 
-df = pd.read_csv('data/Levels_Fyi_Salary_Data.csv')
+df = pd.read_csv('../data/raw/Levels_Fyi_Salary_Data.csv')
 df.head()
 
 
 # ## Missing Values
 
-# In[22]:
+# In[3]:
 
 
 #Let's find the portion of data with missing values with respect to each column
@@ -51,7 +51,7 @@ for col in df.columns:
 # 
 # The feature 'otherdetails' is missing 35.9% of the time. Let's investigate the significance of this feature further:
 
-# In[23]:
+# In[4]:
 
 
 #Let's display some values in the 'otherdetails' column
@@ -60,7 +60,7 @@ np.unique(list(df['otherdetails'].values))
 
 # It appears relevant information is being displayed in the 'otherdetails' column. We should investigate if Race information for users can be found in 'otherdetails' that can't be found in 'race'.
 
-# In[24]:
+# In[5]:
 
 
 #Let's investigate the 'type' of values found in each column
@@ -70,7 +70,7 @@ for col in df.columns:
 
 # It's strange that our 4 columns missing the most values, namely: '*otherdetails*','*gender*', '*race*', and '*education*' are all of type 'float' despite actually being 'string' values.
 
-# In[53]:
+# In[6]:
 
 
 #Let's see if information that can't be found in other columns can be found in 'otherdetails'
@@ -84,7 +84,7 @@ for index, row in df.iterrows():
             d.append(row)
 
 
-# In[79]:
+# In[7]:
 
 
 #let's look at Race information retained in 'otherdetails' not found in 'Race'
@@ -95,7 +95,7 @@ print(f'Number of rows with NaN in \'Race\' but race info in \'otherdetails\': {
 print(f'Portion accounted for: {(len(d)/tot_race)*100:.2f}%')
 
 
-# In[81]:
+# In[8]:
 
 
 #let's look at education information retained in 'otherdetails' not found in 'Education'
@@ -118,7 +118,7 @@ print(f'Portion accounted for: {(len(d)/tot_ed)*100:.2f}%')
 
 # ## Data Distribution
 
-# In[127]:
+# In[9]:
 
 
 #How many unique companies do we have
@@ -134,7 +134,7 @@ for comp in  df['company']:
         comps[comp] = comps[comp] + 1
 
 
-# In[144]:
+# In[10]:
 
 
 #Top 10 companies represented in this data
@@ -148,7 +148,7 @@ plt.ylabel('Number of Entries')
 plt.show()
 
 
-# In[141]:
+# In[11]:
 
 
 # Let's better understand our distribution of people across states
@@ -165,7 +165,7 @@ for state in states:
         state_dict[state] += 1
 
 
-# In[145]:
+# In[12]:
 
 
 #Top 10 states represented in this data
@@ -179,7 +179,7 @@ plt.ylabel('Number of Entries')
 plt.show()
 
 
-# In[140]:
+# In[13]:
 
 
 #Number of rows containing Ireland
@@ -190,7 +190,7 @@ df[df['location'].str.contains('Ireland')].shape
 # 
 # Unexpectedly, this data holds information of subjetcs working outside of America. This opens a new opportunity to compare salaries between Americans and Europeans with similar job positions. Interestingly, **326 subjects claim to work in Ireland**. 
 
-# In[193]:
+# In[14]:
 
 
 #Let's see the ethnic makeup of our data
@@ -204,7 +204,7 @@ for race in df['Race'].dropna():
         races[race] = races[race] + 1
 
 
-# In[155]:
+# In[15]:
 
 
 #Ethnicity distribution
@@ -218,7 +218,7 @@ plt.ylabel('Number of Entries')
 plt.show()
 
 
-# In[194]:
+# In[16]:
 
 
 #Let's see the gender makeup of our data
@@ -231,7 +231,7 @@ for gender in df['gender'].dropna():
         genders[gender] = genders[gender] + 1
 
 
-# In[192]:
+# In[17]:
 
 
 #Ethnicity distribution
@@ -249,7 +249,7 @@ plt.show()
 # 
 # As well as this, females and other sexes are highly under-represented in comparison to males. Again, this should be accounted for.
 
-# In[173]:
+# In[18]:
 
 
 #Remove salaries equating to 0 and divide them by 1000 for presentability
@@ -257,7 +257,7 @@ sal = (df[df['basesalary'] != 0.0]['basesalary']/1000)
 sal.describe()
 
 
-# In[185]:
+# In[19]:
 
 
 #Now let's finally understand the average Salary

@@ -4,12 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>State Level Salary Comparison &#8212; CA4022 Assignment 3</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,21 +31,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -58,10 +57,7 @@
     <link rel="next" title="Salary Expectation in Relation to Job Position or Title" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html" />
     <link rel="prev" title="Impact of Social Factors on Salary" href="Impact%20of%20Social%20Factors%20on%20Salary.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -311,13 +307,13 @@
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="state-level-salary-comparison">
+  <div class="section" id="state-level-salary-comparison">
 <h1>State Level Salary Comparison<a class="headerlink" href="#state-level-salary-comparison" title="Permalink to this headline">¶</a></h1>
 <p>In this notebook, we will be breaking down the salary expectation of <em>Science</em>, <em>Technology</em>, <em>Engineering</em>, and <em>Mathematics</em> (STEM) related positions. We will be performing this analysis by using a dataset <a class="reference external" href="https://www.kaggle.com/jackogozaly/data-science-and-stem-salaries">available online</a>.</p>
 <p>Specifically, we will be comparing the salaries of STEM related positions at a state-level. We have certain expectations going into this analysis, such as California having a higher average salary than other states.</p>
 <p>It should be noted that our dataset is not restricted to the USA. It will be interesting to see a comparison between the salaries received in America vs Europe for similar positions.</p>
 <hr class="docutils" />
-<section id="data-preparation">
+<div class="section" id="data-preparation">
 <h2>Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
 <p>The next few cells are for importing necessary packages, as well as defining our schema and loading in our data.</p>
 <div class="cell docutils container">
@@ -328,14 +324,40 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_8944</span><span class="o">/</span><span class="mf">1462247433.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Let&#39;s read in our packages</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">findspark</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\findspark.py</span> in <span class="ni">init</span><span class="nt">(spark_home, python_path, edit_rc, edit_profile)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span> 
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">spark_home</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">129</span>         <span class="n">spark_home</span> <span class="o">=</span> <span class="n">find</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> 
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">python_path</span><span class="p">:</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\findspark.py</span> in <span class="ni">find</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> 
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">spark_home</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>             <span class="s2">&quot;Couldn&#39;t find Spark, make sure SPARK_HOME env is set&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>             <span class="s2">&quot; or Spark is in an expected location (e.g. from homebrew installation).&quot;</span>
+
+<span class="ne">ValueError</span>: Couldn&#39;t find Spark, make sure SPARK_HOME env is set or Spark is in an expected location (e.g. from homebrew installation).
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyspark</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkConf</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkConf</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -424,8 +446,8 @@ only showing top 2 rows
 </div>
 </div>
 </div>
-</section>
-<section id="american-states">
+</div>
+<div class="section" id="american-states">
 <h2>American States<a class="headerlink" href="#american-states" title="Permalink to this headline">¶</a></h2>
 <p>In the above snippet, you can see that we’ve added a <strong>state</strong> column to each row. We can now groupby this column, and find averages for each of our monetary columns.</p>
 <p>Once, we group are initial dataframe by state ID, we’ll create a new dataframe to represent the averages of the monetary values for that given state. We will then seperate out the entries representing American States only. We must also round our averages up to 1 decimal place to make things more readable.</p>
@@ -506,17 +528,17 @@ only showing top 5 rows
 </div>
 </div>
 </div>
-<section id="american-state-compensation">
+<div class="section" id="american-state-compensation">
 <h3>American State Compensation<a class="headerlink" href="#american-state-compensation" title="Permalink to this headline">¶</a></h3>
 <p>As expected, according to our data, Californian STEM employees receive on average the highest yearly compensation. Washington follows closely in second, and New York state is third. Beyond the third entry we see a sharp decline in total compensation, with Michigan appearing in 4th place.</p>
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to create a choropleth map of America displaying the annual yearly compensation per state.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">chart_studio</span> <span class="k">import</span> <span class="n">plotly</span> <span class="k">as</span> <span class="n">py</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">chart_studio</span> <span class="kn">import</span> <span class="n">plotly</span> <span class="k">as</span> <span class="n">py</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
-<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="k">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
+<span class="kn">from</span> <span class="nn">plotly.offline</span> <span class="kn">import</span> <span class="n">download_plotlyjs</span><span class="p">,</span> <span class="n">init_notebook_mode</span><span class="p">,</span> <span class="n">plot</span><span class="p">,</span> <span class="n">iplot</span>
 <span class="n">init_notebook_mode</span><span class="p">(</span><span class="n">connected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -619,9 +641,9 @@ require(['plotly'], function(Plotly) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="bd083f4e-476c-420b-aa0c-6ed267db4501" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("bd083f4e-476c-420b-aa0c-6ed267db4501")) {                    Plotly.newPlot(                        "bd083f4e-476c-420b-aa0c-6ed267db4501",                        [{"colorbar":{"title":{"text":"Thousands USD"}},"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"locationmode":"USA-states","locations":["SC","AZ","LA","MN","NJ","DC","OR","VA","RI","KY","WY","NH","MI","NV","WI","ID","CA","NE","CT","MT","NC","VT","MD","DE","MO","IL","ME","WA","ND","MS","AL","IN","OH","TN","NM","IA","PA","NY","TX","WV","GA","MA","KS","CO","FL","AR","OK","UT","HI"],"z":[94169.0,149707.0,97040.0,146403.0,169752.0,171189.0,185047.0,166277.0,114792.0,132480.0,156000.0,134931.0,133399.0,134167.0,134689.0,150244.0,271511.0,120077.0,117089.0,155429.0,158635.0,118000.0,127229.0,121949.0,114453.0,164735.0,110750.0,245072.0,126400.0,113333.0,127960.0,138910.0,132391.0,85814.0,140200.0,127065.0,165938.0,227358.0,164141.0,110636.0,155848.0,192501.0,118973.0,192476.0,145755.0,151531.0,110333.0,155558.0,194000.0],"type":"choropleth"}],                        {"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"title":{"text":"2017 to 2021 US STEM Related Positions Average Annual Compensation by State"},"geo":{"scope":"usa"}},                        {"responsive": true}                    ).then(function(){
+<div class="output text_html"><div>                            <div id="13435ea1-fa2d-464d-9596-8111bb4ff0a4" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("13435ea1-fa2d-464d-9596-8111bb4ff0a4")) {                    Plotly.newPlot(                        "13435ea1-fa2d-464d-9596-8111bb4ff0a4",                        [{"colorbar":{"title":{"text":"Thousands USD"}},"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"locationmode":"USA-states","locations":["SC","AZ","LA","MN","NJ","DC","OR","VA","RI","KY","WY","NH","MI","NV","WI","ID","CA","NE","CT","MT","NC","VT","MD","DE","MO","IL","ME","WA","ND","MS","AL","IN","OH","TN","NM","IA","PA","NY","TX","WV","GA","MA","KS","CO","FL","AR","OK","UT","HI"],"z":[94169.0,149707.0,97040.0,146403.0,169752.0,171189.0,185047.0,166277.0,114792.0,132480.0,156000.0,134931.0,133399.0,134167.0,134689.0,150244.0,271511.0,120077.0,117089.0,155429.0,158635.0,118000.0,127229.0,121949.0,114453.0,164735.0,110750.0,245072.0,126400.0,113333.0,127960.0,138910.0,132391.0,85814.0,140200.0,127065.0,165938.0,227358.0,164141.0,110636.0,155848.0,192501.0,118973.0,192476.0,145755.0,151531.0,110333.0,155558.0,194000.0],"type":"choropleth"}],                        {"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"title":{"text":"2017 to 2021 US STEM Related Positions Average Annual Compensation by State"},"geo":{"scope":"usa"}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('bd083f4e-476c-420b-aa0c-6ed267db4501');
+var gd = document.getElementById('13435ea1-fa2d-464d-9596-8111bb4ff0a4');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -647,7 +669,7 @@ if (outputEl) {{
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">PATH</span> <span class="o">=</span> <span class="s2">&quot;../Graph Outputs/us-states.png&quot;</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">PATH</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">)</span>
 </pre></div>
@@ -657,8 +679,8 @@ if (outputEl) {{
 <img alt="_images/State Level Salary Comparison_16_0.png" src="_images/State Level Salary Comparison_16_0.png" />
 </div>
 </div>
-</section>
-<section id="graph-analysis">
+</div>
+<div class="section" id="graph-analysis">
 <h3>Graph Analysis<a class="headerlink" href="#graph-analysis" title="Permalink to this headline">¶</a></h3>
 <p><strong>NOTE</strong> We cannot display the interactive Plotly graph, so instead we will display a static png.</p>
 <p>It’s interesting to note that two states are missing from our data:</p>
@@ -668,11 +690,11 @@ if (outputEl) {{
 </ol>
 <p>We already know that California, Washington, and New York achieve the highest overall average annual compensation. From the graph, it appears than Tennessee received the lowest annual compensation over the past 4 years.</p>
 <p>It’s interesting to note that STEM related positions seem most prosperous in coastal areas. It is unlikely that there is a single clear-cut answer for this. STEM related positions appear more often in built-up regions. If we view the midlands of the United States, such as Nebraska, Kansas, and Oklahoma, we see a large disparity between expected salaries here versus the coastal regions. This is likely due to the fact that these states do not have as large built-up regions, and predominately home the majority of the American farming industry.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="rest-of-the-world">
+<div class="section" id="rest-of-the-world">
 <h1>Rest of the World<a class="headerlink" href="#rest-of-the-world" title="Permalink to this headline">¶</a></h1>
 <p>Let’s now do a similar analysis with respect to the non-American states, countries, and cities within our dataset. To get our data, we just want the opposite of items found in the <code class="docutils literal notranslate"><span class="pre">states</span></code> list variable. However, as the locations are more complex, we’ll need to further investigate.</p>
 <div class="cell docutils container">
@@ -742,7 +764,7 @@ only showing top 5 rows
 </div>
 </div>
 </div>
-<section id="visualisation">
+<div class="section" id="visualisation">
 <h2>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">¶</a></h2>
 <p>So from here, in order to understand our data, we will use various visualisations. Creating a chloropleth map for American states is a much easier process than for various European and Asian countries. Let’s firstly begin with some simpler visualisation.</p>
 <p>As before, we must convert our dataframe to a pandas dataframe object to use matplotlib</p>
@@ -776,7 +798,7 @@ only showing top 5 rows
 <img alt="_images/State Level Salary Comparison_23_0.png" src="_images/State Level Salary Comparison_23_0.png" />
 </div>
 </div>
-<section id="scatterplot-analysis">
+<div class="section" id="scatterplot-analysis">
 <h3>Scatterplot Analysis<a class="headerlink" href="#scatterplot-analysis" title="Permalink to this headline">¶</a></h3>
 <p>From our graph it’s clear that most countries receive between <span class="math notranslate nohighlight">\([0, 30000]\)</span> as a bonus. We do see one outlier receiving on average, over 70,000 per annum bonus. Let’s see which country this is.</p>
 <p>In the below cell, we see that this country is Saudi Arabia. Saudi Arabia is a wealthy country, and is currently experience an economic boom. Therefore, it’s not surprising that the salaries and bonuses in Saudi Arabia are high.</p>
@@ -865,8 +887,8 @@ only showing top 5 rows
 <img alt="_images/State Level Salary Comparison_26_0.png" src="_images/State Level Salary Comparison_26_0.png" />
 </div>
 </div>
-</section>
-<section id="horizontal-bar-chart-analysis">
+</div>
+<div class="section" id="horizontal-bar-chart-analysis">
 <h3>Horizontal Bar-Chart Analysis<a class="headerlink" href="#horizontal-bar-chart-analysis" title="Permalink to this headline">¶</a></h3>
 <p>The top 20 countries with the highest base salary are presented above. The second entry of <em>Marshall Islands</em> is a bit unexpected, and one might question its legitimacy. In the below cell, we use our base dataframe to count the number of instances where ‘Marhsall Islands’ is the location. We see that there is only a single instance where this is the case.</p>
 <p>Following on from this find, we will redefine our dataset to include only countries with more than 5 entries. Let’s see how this changes our visualisation.</p>
@@ -970,6 +992,7 @@ only showing top 2 rows
 <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
        <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Income per Country (Dollars)&quot;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../Graph Outputs/income-by-country.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -977,16 +1000,16 @@ only showing top 2 rows
 <img alt="_images/State Level Salary Comparison_33_0.png" src="_images/State Level Salary Comparison_33_0.png" />
 </div>
 </div>
-</section>
-<section id="new-horizontal-bar-chart-analysis">
+</div>
+<div class="section" id="new-horizontal-bar-chart-analysis">
 <h3>New Horizontal Bar Chart Analysis<a class="headerlink" href="#new-horizontal-bar-chart-analysis" title="Permalink to this headline">¶</a></h3>
 <p>We see that limiting our list to countries with 5 or more entries has removed some of the unexpected countries such as Marshall Islands, Iraw, and Morocco. It also dropped Saudi Arabia from our list.</p>
 <p>We see from our graph that the average base salary of countries according to our data remains relatively stable with the exception of The UAE and Switzerland. It seems that the amount of bonus you receive is not directly proportional to your base salary, and varies greatly from country-to-country. Ireland sits comfortably in the 13th position just ahead of Japan and Behind the Netherlands. We do notice that Irish employees receive less of a bonus than both the Dutch and the Japanese.</p>
 <p>From our list, we see the highest ranked European country is Denmark which comes as a surprise to me (<em>discounting Switzerland as it’s not in the European Union</em>). After Denmark, the next European countries are Netherlands and Ireland in 12th and 13th respectfully. This shows the global scale of STEM technologies and the growing interest of the world.</p>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="united-states-vs-rest-of-world">
+<div class="section" id="united-states-vs-rest-of-world">
 <h2>United States VS Rest of World<a class="headerlink" href="#united-states-vs-rest-of-world" title="Permalink to this headline">¶</a></h2>
 <p>Let’s do one final comparison of the United States versus the rest of the world with respect to STEM related positions. We will make an overlapping barchart comparing the top 6 US states to the top 5 countries from the rest of the world also including Ireland.</p>
 <div class="cell docutils container">
@@ -1195,6 +1218,7 @@ only showing top 2 rows
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Income (Dollar)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison Between Top 6 States and Top 5 European Countries (Incl. Ireland)&#39;</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;../Graph Outputs/us-vs-countries.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1202,23 +1226,23 @@ only showing top 2 rows
 <img alt="_images/State Level Salary Comparison_37_0.png" src="_images/State Level Salary Comparison_37_0.png" />
 </div>
 </div>
-<section id="u-s-vs-r-o-w-analysis">
+<div class="section" id="u-s-vs-r-o-w-analysis">
 <h3>U.S Vs R.O.W Analysis<a class="headerlink" href="#u-s-vs-r-o-w-analysis" title="Permalink to this headline">¶</a></h3>
 <p>In the final graph, we are missing some information regarding the countries and states being directly compared. However, the important information that we can see is this:</p>
 <ul class="simple">
 <li><p>According to our data, employees in STEM related positions receive more compensation annually in the United States than they do in the rest of the World.</p></li>
 <li><p>The margins between earnings seem quite considerable.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="conclusion">
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>In this notebook, we investigated the earnings from STEM related positions in both the United States, and the Rest of the World. We understood that the coastal regions of the US offer greater opportunity in terms of STEM positions, whilst the midlands offer opportunity in other sectors such as agriculture.</p>
 <p>With this dataset being predominantely American, our data for the rest of the world was biased towards countries with less entries. We filtered out any countries with less than 5 recorded instances. We found that of the countries with the highest earning STEM eployees, very few are in the European Union. This emphasises the globalisation of the STEM-related market.</p>
 <p>Finally, we wanted to compare the eanrings of the top states in America, with the earnings of the top countries in the rest of the world, including Ireland. We found that in all cases of our comparison, American states earn more than the averages of European countries. On this simple analysis alone, it would be worth while to consider a position in the United States if you would like to earn more in your position. However, this is not an exhaustive analysis, and ofcourse other factors are in play.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1243,22 +1267,31 @@ only showing top 2 rows
               </div>
               
         
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Impact%20of%20Social%20Factors%20on%20Salary.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Impact of Social Factors on Salary</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Salary Expectation in Relation to Job Position or Title</p>
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Impact%20of%20Social%20Factors%20on%20Salary.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Impact of Social Factors on Salary</p>
+            </div>
+        </a>
     </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+     <div id="next">
+        <a class="right-next" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Salary Expectation in Relation to Job Position or Title</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
 </div>
         
         </div>
@@ -1279,7 +1312,8 @@ only showing top 2 rows
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>

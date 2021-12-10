@@ -53,11 +53,11 @@ spark = SparkSession     .builder     .appName("Spark Job-Level Salary Analysis"
 schema = StructType([    StructField("date", DateType(), True),    StructField("time", StringType(), True),    StructField("company", StringType(), True),    StructField("level", StringType(), True),    StructField("title", StringType(), True),    StructField("totalyearlycompensation", IntegerType(), False),    StructField("location", StringType(), True),    StructField("yearsofexperience", FloatType(), False),    StructField("yearsatcompany", FloatType(), False),    StructField("tag", StringType(), True),    StructField("basesalary", IntegerType(), False),    StructField("stockgrantvalue", IntegerType(), False),    StructField("bonus", IntegerType(), False),    StructField("gender", StringType(), True),    StructField("cityid", StringType(), True),    StructField("dmaid", StringType(), True),    StructField("race", StringType(), True),    StructField("education", StringType(), True)])
 
 # Load and parse the data file, converting it to a DataFrame.
-data = spark.read.format("csv")    .option("header", "false")    .option("delimiter", "\t")    .schema(schema)    .load("data/seperated_time_data/cleaned.txt")
+data = spark.read.format("csv")    .option("header", "false")    .option("delimiter", "\t")    .schema(schema)    .load("../data/seperated_time_data/cleaned.txt")
 data.show(n=5)
 
 
-# In[70]:
+# In[6]:
 
 
 #How many unique titles do we have
@@ -70,7 +70,7 @@ data.select(countDistinct('title')).show()
 # 
 # We will discuss why we aggregate into quarters of the year later. For now, let's look at the representation of titles in our data.
 
-# In[108]:
+# In[7]:
 
 
 #Count occurences of each title
@@ -85,19 +85,20 @@ ax = sns.countplot(y='title', data=counts)
 
 plt.ylabel('Title')
 plt.xlabel('Count')
+plt.savefig("../Graph Outputs/instances-by-title.png" ,bbox_inches='tight')
 plt.show()
 
 
 # It's clear that *Software Engineer* is an over-represented title in our data. However, there still remains sufficient instances of each title, meaning we will not exclude any position from analysis.
 
-# In[71]:
+# In[8]:
 
 
 #Add quarter column
 data = data.withColumn('quarter', quarter('date'))
 
 
-# In[72]:
+# In[9]:
 
 
 #Let's groupby title, year, and quarter, then avg our monetary values
@@ -131,14 +132,14 @@ expec_sal_by_title.show(n=5)
 # 
 # We used the `quarter()` function on our raw data earlier to add a quarter column by using our date column. In the following cells, we will convert to pandas DataFrame before visualising our results.
 
-# In[73]:
+# In[10]:
 
 
 #Let's convert to pandas before graphing
 pandasdf1 = expec_sal_by_title.toPandas()
 
 
-# In[82]:
+# In[11]:
 
 
 pandasdf1.year = pandasdf1['year'].astype(str)
@@ -147,20 +148,20 @@ pandasdf1['period'] = pandasdf1[['year', 'quarter']].agg('-'.join, axis=1)
 pandasdf1.drop(columns=['avg(quarter)'], inplace=True)
 
 
-# In[83]:
+# In[12]:
 
 
 #Next we pivot to better represent our datta
 pandasdf1 = pandasdf1.pivot('period', 'title', 'total comp')
 
 
-# In[146]:
+# In[13]:
 
 
 pandasdf1.tail(3)
 
 
-# In[147]:
+# In[14]:
 
 
 pandasdf1.shape
@@ -169,7 +170,7 @@ pandasdf1.shape
 # ## Total Compensation over Time per Title
 # We can now see that our dataframe consists of 18 data points for each of our 15 titles. This is a much more digestable dataset and will create a visualisation that is more interpretable and easy on the eyes.
 
-# In[143]:
+# In[16]:
 
 
 plt.figure(figsize=(15,10))
@@ -192,7 +193,7 @@ plt.show()
 # 
 # We'll make an individual plot for each title in the following cell.
 
-# In[144]:
+# In[22]:
 
 
 import random
@@ -216,6 +217,7 @@ fig.text(0.5, 0.89, "Total Compensation per Title by Time Period", fontsize=20, 
 #Setting axes labels
 fig.text(0.5, 0.11, 'Period', ha='center', va='center', fontsize=20)
 fig.text(0.02, 0.5, 'Total Compensation', ha='center', va='center', rotation='vertical', fontsize=20)
+plt.savefig("../Graph Outputs/comp-per-title.png", bbox_inches='tight')
 plt.show()
 
 
