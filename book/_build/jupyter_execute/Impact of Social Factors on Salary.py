@@ -334,6 +334,9 @@ other_data = filtered_data[filtered_data['gender']=="Other"]
 
 
 # Plotting a horizontal bar chart for average base salary by position
+ind = np.arange(10)
+width = 0.25
+
 fig, ax = plt.subplots()
 ax.barh(ind, female_data['avg(basesalary)'], width, label='Female')
 ax.barh(ind + width, male_data['avg(basesalary)'], width, label='Male')
