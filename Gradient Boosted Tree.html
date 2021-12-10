@@ -4,12 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gradient Boosted Tree &#8212; CA4022 Assignment 3</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -55,10 +54,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Impact of Covid-19 on Salaries &amp; Employment" href="Impact%20of%20Covid-19%20on%20Salaries%20%26%20Employment.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -273,7 +269,7 @@
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="gradient-boosted-tree">
+  <div class="section" id="gradient-boosted-tree">
 <h1>Gradient Boosted Tree<a class="headerlink" href="#gradient-boosted-tree" title="Permalink to this headline">¶</a></h1>
 <p>The following Jupyter Notebook shows the use of <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a> <code class="docutils literal notranslate"><span class="pre">GBTRegressor</span></code>. In the notebook, we’ll first define our schema structure and populate it with our data. Our data is currently stored in <code class="docutils literal notranslate"><span class="pre">cleaning.txt</span></code>, a simple text file representation of the output our ‘Data Cleaning PIG Script’ produces.</p>
 <p>We’ll perform some simple data transformations to ensure any categorical features are presented as DoubleType using <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a>’s <code class="docutils literal notranslate"><span class="pre">StringIndexer</span></code> API. We’ll do the same for any Integer typed features.</p>
@@ -286,19 +282,44 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_6304</span><span class="o">/</span><span class="mf">1871603196.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">findspark</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\findspark.py</span> in <span class="ni">init</span><span class="nt">(spark_home, python_path, edit_rc, edit_profile)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span> 
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">spark_home</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">129</span>         <span class="n">spark_home</span> <span class="o">=</span> <span class="n">find</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> 
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">python_path</span><span class="p">:</span>
+
+<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\findspark.py</span> in <span class="ni">find</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> 
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">spark_home</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>             <span class="s2">&quot;Couldn&#39;t find Spark, make sure SPARK_HOME env is set&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>             <span class="s2">&quot; or Spark is in an expected location (e.g. from homebrew installation).&quot;</span>
+
+<span class="ne">ValueError</span>: Couldn&#39;t find Spark, make sure SPARK_HOME env is set or Spark is in an expected location (e.g. from homebrew installation).
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyspark</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="k">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.regression</span> <span class="k">import</span> <span class="n">GBTRegressor</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">VectorIndexer</span><span class="p">,</span> <span class="n">StringIndexer</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="k">import</span> <span class="n">RegressionEvaluator</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkConf</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="n">col</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.regression</span> <span class="kn">import</span> <span class="n">GBTRegressor</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorIndexer</span><span class="p">,</span> <span class="n">StringIndexer</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="kn">import</span> <span class="n">RegressionEvaluator</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkConf</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">col</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -343,48 +364,27 @@
     <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;false&quot;</span><span class="p">)</span>\
     <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;delimiter&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>\
     <span class="o">.</span><span class="n">schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/replaced_salary_data/cleaned.txt&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;../data/replaced_salary_data/cleaned.txt&quot;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AnalysisException</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">e470cdff9aa4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> 
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="c1"># Load and parse the data file, converting it to a DataFrame.</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">data</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>\
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="s2">&quot;false&quot;</span><span class="p">)</span>\
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;delimiter&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>\
-
-<span class="nn">/usr/local/spark/python/pyspark/sql/readwriter.py</span> in <span class="ni">load</span><span class="nt">(self, path, format, schema, **options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">204</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>         <span class="k">elif</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>             <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">:</span>
-
-<span class="nn">/usr/local/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py</span> in <span class="ni">__call__</span><span class="nt">(self, *args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1303</span>         <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway_client</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1304</span>         <span class="n">return_value</span> <span class="o">=</span> <span class="n">get_return_value</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1305</span>             <span class="n">answer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway_client</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1306</span> 
-
-<span class="nn">/usr/local/spark/python/pyspark/sql/utils.py</span> in <span class="ni">deco</span><span class="nt">(*a, **kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="c1"># Hide where the exception came from that shows a non-Pythonic</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>                 <span class="c1"># JVM exception message.</span>
-<span class="ne">--&gt; </span><span class="mi">117</span>                 <span class="k">raise</span> <span class="n">converted</span> <span class="kn">from</span> <span class="bp">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>             <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span>                 <span class="k">raise</span>
-
-<span class="ne">AnalysisException</span>: Path does not exist: file:/home/seanc/ca4022_assignment_3/book/data/replaced_salary_data/cleaned.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+------------------+---------+-----+--------------------+-----------------------+-----------------+-----------------+--------------+---+----------+---------------+-----+------+------+-----+----+---------+
+|         timestamp|  company|level|               title|totalyearlycompensation|         location|yearsofexperience|yearsatcompany|tag|basesalary|stockgrantvalue|bonus|gender|cityid|dmaid|race|education|
++------------------+---------+-----+--------------------+-----------------------+-----------------+-----------------+--------------+---+----------+---------------+-----+------+------+-----+----+---------+
+|  06/07/2017 11:33|   ORACLE|   L3|     Product Manager|                 127000| Redwood City, CA|              1.5|           1.5| NA|    107000|          20000|10000|    NA|  7392|  807|  NA|       NA|
+|  06/10/2017 17:11|     EBAY| SE 2|   Software Engineer|                 100000|San Francisco, CA|              5.0|           3.0| NA|    141907|              0|    0|    NA|  7419|  807|  NA|       NA|
+|  06/11/2017 14:53|   AMAZON|   L7|     Product Manager|                 310000|      Seattle, WA|              8.0|           0.0| NA|    155000|              0|    0|    NA| 11527|  819|  NA|       NA|
+| 6/17/2017 0:23:14|    APPLE|   M1|Software Engineer...|                 372000|    Sunnyvale, CA|              7.0|           5.0| NA|    157000|         180000|35000|    NA|  7472|  807|  NA|       NA|
+|6/20/2017 10:58:51|MICROSOFT|   60|   Software Engineer|                 157000|Mountain View, CA|              5.0|           3.0| NA|    141907|              0|    0|    NA|  7322|  807|  NA|       NA|
++------------------+---------+-----+--------------------+-----------------------+-----------------+-----------------+--------------+---+----------+---------------+-----+------+------+-----+----+---------+
+only showing top 5 rows
 </pre></div>
 </div>
 </div>
 </div>
-<section id="encoding-of-categorical-features">
+<div class="section" id="encoding-of-categorical-features">
 <h2>Encoding of Categorical Features<a class="headerlink" href="#encoding-of-categorical-features" title="Permalink to this headline">¶</a></h2>
 <p>In the next cell, we will list all of our categorical features currently of the <code class="docutils literal notranslate"><span class="pre">string</span></code> type. All ML models require data to presented in numerical values. We will use the <code class="docutils literal notranslate"><span class="pre">StringIndexer</span></code> method to transform our categorical features into numerical columns.</p>
 <p>This is performed as a pre-processing step to our pipeline.</p>
@@ -405,8 +405,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="typecasting-of-features">
+</div>
+<div class="section" id="typecasting-of-features">
 <h2>Typecasting of Features<a class="headerlink" href="#typecasting-of-features" title="Permalink to this headline">¶</a></h2>
 <p>In this step, we will convert all of our <code class="docutils literal notranslate"><span class="pre">integer</span></code> features into <code class="docutils literal notranslate"><span class="pre">double</span></code> features. Again, this is a formality, and is better practice for ML pipeline building. Like the previous step, we will transform our integer values straight away.</p>
 <div class="cell docutils container">
@@ -421,13 +421,13 @@
 </div>
 </div>
 </div>
-</section>
-<section id="assembling-input-features">
+</div>
+<div class="section" id="assembling-input-features">
 <h2>Assembling Input Features<a class="headerlink" href="#assembling-input-features" title="Permalink to this headline">¶</a></h2>
 <p>Here we assemble all of the input features for our model. This includes our previously Typecast features, and our Encoded categorical features.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">VectorAssembler</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
 
 <span class="n">feature_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gender_index&#39;</span><span class="p">,</span> <span class="s1">&#39;race_index&#39;</span><span class="p">,</span> <span class="s1">&#39;education_index&#39;</span><span class="p">,</span> <span class="s1">&#39;company_index&#39;</span><span class="p">,</span> <span class="s1">&#39;title_index&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;level_index&#39;</span><span class="p">,</span> <span class="s1">&#39;location_index&#39;</span><span class="p">,</span> <span class="s1">&#39;totalyearlycompensation&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsofexperience&#39;</span><span class="p">,</span> <span class="s1">&#39;yearsatcompany&#39;</span><span class="p">,</span>
@@ -443,7 +443,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s show the number of unique values per column</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">feature_list</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Distinct Count for column </span><span class="si">{col}</span><span class="s2">: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">indexed</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Distinct Count for column </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">indexed</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
@@ -467,21 +467,21 @@ Distinct Count for column dmaid: 150
 </div>
 </div>
 </div>
-</section>
-<section id="normalise-feature-set">
+</div>
+<div class="section" id="normalise-feature-set">
 <h2>Normalise Feature Set<a class="headerlink" href="#normalise-feature-set" title="Permalink to this headline">¶</a></h2>
 <p>Our input features are not on one singular scale. This can damage the performance of our ML model. For example, <code class="docutils literal notranslate"><span class="pre">yearsofexperience</span></code> will be a small value, less than 50. Whereas <code class="docutils literal notranslate"><span class="pre">basesalary</span></code> can be upwards of 1,000,000. We require all values to be within a similar range.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">Normalizer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">Normalizer</span>
 
 <span class="n">normalizer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;features_norm&quot;</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="training-test-split">
+</div>
+<div class="section" id="training-test-split">
 <h2>Training, Test split<a class="headerlink" href="#training-test-split" title="Permalink to this headline">¶</a></h2>
 <p>In the following cell, we are simply splitting our data into training and test data.</p>
 <div class="cell docutils container">
@@ -511,8 +511,8 @@ Dropping na&#39;s
 </div>
 </div>
 </div>
-</section>
-<section id="pipeline-creation">
+</div>
+<div class="section" id="pipeline-creation">
 <h2>Pipeline Creation<a class="headerlink" href="#pipeline-creation" title="Permalink to this headline">¶</a></h2>
 <p>When following the previous steps from <strong>Encoding of Categorical Features</strong>, through to <strong>Normalise Feature Set</strong>, you’ll notice that the <code class="docutils literal notranslate"><span class="pre">inputCol</span></code> used in the function is usually the <code class="docutils literal notranslate"><span class="pre">outputCol</span></code> from the previous function. This is done purposely so that the individual Transformer pieces of our pipeline fit together.</p>
 <p>In our stages, we start with our Vector Assembler. That feeds into our Normalizer as the final transformation step. The final stage is the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> stage which is the Gradient Boosted Trees Regressor model itself. We will define it in the following cells then instantiate our Pipeline.</p>
@@ -535,8 +535,8 @@ Dropping na&#39;s
 </div>
 </div>
 </div>
-</section>
-<section id="prediction-on-test-data">
+</div>
+<div class="section" id="prediction-on-test-data">
 <h2>Prediction on Test Data<a class="headerlink" href="#prediction-on-test-data" title="Permalink to this headline">¶</a></h2>
 <p>Now that we’ve built our model, let’s test its accuracy using the test data we set aside earlier. We can apply our model to data using <code class="docutils literal notranslate"><span class="pre">model.transform(&lt;data&gt;)</span></code>. This will create a DataFrame object, where each row has a new column named <code class="docutils literal notranslate"><span class="pre">prediction</span></code>.</p>
 <p>Let’s take a look at the prediction column. As our dataset is quite large, we’ll view a subset of the columns.</p>
@@ -587,14 +587,14 @@ only showing top 10 rows
 </div>
 </div>
 </div>
-</section>
-<section id="model-tuning">
+</div>
+<div class="section" id="model-tuning">
 <h2>Model Tuning<a class="headerlink" href="#model-tuning" title="Permalink to this headline">¶</a></h2>
 <p>In the following section, we’ll be looking at using <code class="docutils literal notranslate"><span class="pre">CrossValidator</span></code> to improve the overall performance of model. We’ll also be seeting up a Grid Search problem using <code class="docutils literal notranslate"><span class="pre">ParamGridBuilder</span></code> from <a class="reference external" href="http://Pyspark.ML">Pyspark.ML</a> for hyperparameter tuning. These are important steps in model development.</p>
 <p><strong>Important Note:</strong> Running a Grid Search on a CPU will take considerable time to finish, and is generally not advisable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.tuning</span> <span class="k">import</span> <span class="n">CrossValidator</span><span class="p">,</span> <span class="n">ParamGridBuilder</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.tuning</span> <span class="kn">import</span> <span class="n">CrossValidator</span><span class="p">,</span> <span class="n">ParamGridBuilder</span>
 </pre></div>
 </div>
 </div>
@@ -623,8 +623,8 @@ only showing top 10 rows
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -649,15 +649,22 @@ only showing top 10 rows
               </div>
               
         
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Impact%20of%20Covid-19%20on%20Salaries%20%26%20Employment.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Impact of Covid-19 on Salaries &amp; Employment</p>
-        </div>
-    </a>
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Impact%20of%20Covid-19%20on%20Salaries%20%26%20Employment.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Impact of Covid-19 on Salaries &amp; Employment</p>
+            </div>
+        </a>
+    </div>
+
 </div>
         
         </div>
@@ -678,7 +685,8 @@ only showing top 10 rows
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>

@@ -4,12 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Preliminary Data Analysis &#8212; CA4022 Assignment 3</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -32,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -55,10 +54,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Impact of Social Factors on Salary" href="Impact%20of%20Social%20Factors%20on%20Salary.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -262,7 +258,7 @@
         
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="preliminary-data-analysis">
+  <div class="section" id="preliminary-data-analysis">
 <h1>Preliminary Data Analysis<a class="headerlink" href="#preliminary-data-analysis" title="Permalink to this headline">¶</a></h1>
 <p>The following jupyter notebook aims to perform some preliminary data analysis for our STEM (Science, Technology, Engineering, Math) dataset which can be found <a class="reference external" href="https://www.kaggle.com/jackogozaly/data-science-and-stem-salaries">Here</a> . We will perform the following tasks:</p>
 <ul class="simple">
@@ -295,80 +291,180 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/Levels_Fyi_Salary_Data.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/raw/Levels_Fyi_Salary_Data.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">98</span><span class="n">d0dd94aa51</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/Levels_Fyi_Salary_Data.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> 
-<span class="g g-Whitespace">    </span><span class="mi">313</span>         <span class="k">return</span> <span class="n">wrapper</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span> 
-<span class="ne">--&gt; </span><span class="mi">586</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> 
-<span class="g g-Whitespace">    </span><span class="mi">588</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span> 
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> 
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span> 
-<span class="ne">--&gt; </span><span class="mi">811</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span> 
-<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1038</span>             <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1040</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1041</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1042</span>     <span class="k">def</span> <span class="nf">_failover_to_python</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span> 
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="c1"># open handles</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> 
-
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/parsers/base_parser.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="n">Let</span> <span class="n">the</span> <span class="n">readers</span> <span class="nb">open</span> <span class="n">IOHandles</span> <span class="n">after</span> <span class="n">they</span> <span class="n">are</span> <span class="n">done</span> <span class="k">with</span> <span class="n">their</span> <span class="n">potential</span> <span class="n">raises</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">222</span><span class="s2">         self.handles = get_handle(</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span><span class="s2">             src,</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">             &quot;r&quot;,</span>
-
-<span class="nn">~/.local/lib/python3.8/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="s2">         if ioargs.encoding and &quot;b&quot; not in ioargs.mode:</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2">             # Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">702</span><span class="s2">             handle = open(</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">                 handle,</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">                 ioargs.mode,</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/Levels_Fyi_Salary_Data.csv&#39;
-</pre></div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>timestamp</th>
+      <th>company</th>
+      <th>level</th>
+      <th>title</th>
+      <th>totalyearlycompensation</th>
+      <th>location</th>
+      <th>yearsofexperience</th>
+      <th>yearsatcompany</th>
+      <th>tag</th>
+      <th>basesalary</th>
+      <th>...</th>
+      <th>Doctorate_Degree</th>
+      <th>Highschool</th>
+      <th>Some_College</th>
+      <th>Race_Asian</th>
+      <th>Race_White</th>
+      <th>Race_Two_Or_More</th>
+      <th>Race_Black</th>
+      <th>Race_Hispanic</th>
+      <th>Race</th>
+      <th>Education</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6/7/2017 11:33:27</td>
+      <td>Oracle</td>
+      <td>L3</td>
+      <td>Product Manager</td>
+      <td>127000</td>
+      <td>Redwood City, CA</td>
+      <td>1.5</td>
+      <td>1.5</td>
+      <td>NaN</td>
+      <td>107000.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6/10/2017 17:11:29</td>
+      <td>eBay</td>
+      <td>SE 2</td>
+      <td>Software Engineer</td>
+      <td>100000</td>
+      <td>San Francisco, CA</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6/11/2017 14:53:57</td>
+      <td>Amazon</td>
+      <td>L7</td>
+      <td>Product Manager</td>
+      <td>310000</td>
+      <td>Seattle, WA</td>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>155000.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6/17/2017 0:23:14</td>
+      <td>Apple</td>
+      <td>M1</td>
+      <td>Software Engineering Manager</td>
+      <td>372000</td>
+      <td>Sunnyvale, CA</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>157000.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6/20/2017 10:58:51</td>
+      <td>Microsoft</td>
+      <td>60</td>
+      <td>Software Engineer</td>
+      <td>157000</td>
+      <td>Mountain View, CA</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div></div></div>
 </div>
-</div>
-</div>
-<section id="missing-values">
+<div class="section" id="missing-values">
 <h2>Missing Values<a class="headerlink" href="#missing-values" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -377,7 +473,7 @@
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="n">tot_missing</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">tot</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Column: </span><span class="se">\&quot;</span><span class="si">{col}</span><span class="se">\&quot;</span><span class="s1"> | Total Missing: </span><span class="si">{tot_missing}</span><span class="s1"> | Missing: {(tot_missing/tot)*100:.2f}%&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Column: </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="se">\&quot;</span><span class="s1"> | Total Missing: </span><span class="si">{</span><span class="n">tot_missing</span><span class="si">}</span><span class="s1"> | Missing: </span><span class="si">{</span><span class="p">(</span><span class="n">tot_missing</span><span class="o">/</span><span class="n">tot</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -446,7 +542,7 @@ Column: &quot;Education&quot; | Total Missing: 32272 | Missing: 51.52%
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Let&#39;s investigate the &#39;type&#39; of values found in each column</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Column: &quot;</span><span class="si">{col}</span><span class="s1">&quot; | Type: {type(df[col][0])}&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Column: &quot;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">&quot; | Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -506,8 +602,8 @@ Column: &quot;Education&quot; | Type: &lt;class &#39;float&#39;&gt;
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">otherdetails</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="n">tot_race</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Number of rows with NaN in </span><span class="se">\&#39;</span><span class="s1">Race</span><span class="se">\&#39;</span><span class="s1"> but race info in </span><span class="se">\&#39;</span><span class="s1">otherdetails</span><span class="se">\&#39;</span><span class="s1">: {len(c)}&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Portion accounted for: {(len(d)/tot_race)*100:.2f}%&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of rows with NaN in </span><span class="se">\&#39;</span><span class="s1">Race</span><span class="se">\&#39;</span><span class="s1"> but race info in </span><span class="se">\&#39;</span><span class="s1">otherdetails</span><span class="se">\&#39;</span><span class="s1">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Portion accounted for: </span><span class="si">{</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="n">tot_race</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -526,8 +622,8 @@ Portion accounted for: 1.13%
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">200</span><span class="p">]</span><span class="o">.</span><span class="n">otherdetails</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="n">tot_ed</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Education&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Number of rows with NaN in </span><span class="se">\&#39;</span><span class="s1">Education</span><span class="se">\&#39;</span><span class="s1"> but education info in </span><span class="se">\&#39;</span><span class="s1">otherdetails</span><span class="se">\&#39;</span><span class="s1">: {len(d)}&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Portion accounted for: {(len(d)/tot_ed)*100:.2f}%&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of rows with NaN in </span><span class="se">\&#39;</span><span class="s1">Education</span><span class="se">\&#39;</span><span class="s1"> but education info in </span><span class="se">\&#39;</span><span class="s1">otherdetails</span><span class="se">\&#39;</span><span class="s1">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Portion accounted for: </span><span class="si">{</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="n">tot_ed</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -540,21 +636,21 @@ Portion accounted for: 0.84%
 </div>
 </div>
 </div>
-<section id="findings">
+<div class="section" id="findings">
 <h3>Findings<a class="headerlink" href="#findings" title="Permalink to this headline">¶</a></h3>
 <p>We can see that the portion of missing information in ‘education’ and ‘race’ that can be accounted for in ‘otherdetails’ is less than <strong>2%</strong>. The information is displayed in an unstructured manner, meaning extraction would take considerable effort involving complex string matching functions.</p>
 <p>There is a <strong>considerable</strong> amount of information missing for subjects regarding ‘education’, ‘gender’, and ‘race’. Through investigation, we conclude that this is an intrinsic property of the data, and is not caused by error. Cases where ‘education’, and ‘race’ information can be found in ‘otherdetails’ and not in the correct column can be considered edge cases that do not fit into a “regular” category. This can be seen in the example above in which a subject describes their race as ‘American Indian or Alaska Native’, which is clearly not ‘Asian’, ‘Hispanic’, ‘Black’, or ‘White’. As this data was scraped, it is likely that edge cases were not accounted for.</p>
 <p>The same can be said for ‘academic level’. Subjects describing their academic level as ‘Associate Degree’ or ‘Technical or occupational certificate’ do not fall under categories of ‘Bachelors Degree’, ‘Masters Degree’, ‘PhD’, or ‘Doctorate’.</p>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="data-distribution">
+<div class="section" id="data-distribution">
 <h2>Data Distribution<a class="headerlink" href="#data-distribution" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#How many unique companies do we have</span>
 <span class="n">num_comp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;company&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;There are a total of: </span><span class="si">{num_comp}</span><span class="s1"> unique companies&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are a total of: </span><span class="si">{</span><span class="n">num_comp</span><span class="si">}</span><span class="s1"> unique companies&#39;</span><span class="p">)</span> 
 
 <span class="c1">#Which company is most prevelant</span>
 <span class="n">comps</span> <span class="o">=</span> <span class="p">{}</span>
@@ -595,7 +691,7 @@ Portion accounted for: 0.84%
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s better understand our distribution of people across states</span>
 <span class="n">states</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">state</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">])])</span>
 <span class="n">num_states</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">states</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;There are a total of: </span><span class="si">{num_states}</span><span class="s1"> unique states&#39;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;There are a total of: </span><span class="si">{</span><span class="n">num_states</span><span class="si">}</span><span class="s1"> unique states&#39;</span><span class="p">)</span> 
 
 <span class="c1">#Which state is most prevelant</span>
 <span class="n">state_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -754,13 +850,13 @@ Name: basesalary, dtype: float64
 <img alt="_images/Preliminary Data Analysis_27_0.png" src="_images/Preliminary Data Analysis_27_0.png" />
 </div>
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h3>Findings<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>In our data distribution analysis we found that fristly, the multinational conglomerate tech corporations are highly over represented. This is to be expected because of the sheer volume of employees they have. We also find that California, America’s ‘Tech Capital’ and home to Silicon Valley, is also highly over represented, which again, is expected. It was interesting to find that not only American states are found in this data. Various European countries including Ireland, have multiple entries.</p>
 <p>Following from this, we analysed the representation of ethnicities and sex. We find that black and hispanic subjects are poorly represented in this data, whilst asian and white subjects are highly represented. We note that these factors should be accounted for when making any future inference regarding ethnicity. Males are overly represented in comparison to females and other sexes. This is an issue regularly identified in data of this nature. Unfortunately, all of the biases above are intrinsic properties of our dataset.</p>
 <p>We conclude our analysis by examining the overall distribution of base salary. The mean salary is 141,000 dollars which is roughly 123,000 Euro. This figure is quite high. Again, this value may be skewed by the over-representation of companies, sexes, and ethnicities. In our case, this figure may not represent exepected salary for under-represented companies, and minorities. The distribution is somewhat right skewed, meaning there are outliers receiving much higher salaries. The highest earner has a base salary of 1,659,000, or 1.6 million dollars.</p>
-</section>
-<section id="considerations-for-future-analysis">
+</div>
+<div class="section" id="considerations-for-future-analysis">
 <h3>Considerations for Future Analysis<a class="headerlink" href="#considerations-for-future-analysis" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Understand that in this analysis, the type values for columns appear to be inconsistent.</p></li>
@@ -770,11 +866,11 @@ Name: basesalary, dtype: float64
 <li><p>Understand that the data includes employees outside of The United States</p></li>
 <li><p>As we are planning to use CatBoost, categorical variables are more valuable to us than One-hot encoded vectors. You should consider removing one-hot encoded vectors for simplicity.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -799,15 +895,22 @@ Name: basesalary, dtype: float64
               </div>
               
         
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Impact%20of%20Social%20Factors%20on%20Salary.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Impact of Social Factors on Salary</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="Impact%20of%20Social%20Factors%20on%20Salary.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Impact of Social Factors on Salary</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
 </div>
         
         </div>
@@ -828,7 +931,8 @@ Name: basesalary, dtype: float64
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>
