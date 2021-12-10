@@ -45,21 +45,21 @@ data = spark.read.format("csv")    .option("header", "false")    .option("delimi
 
 # # Short Analysis by Gender
 
-# In[240]:
+# In[5]:
 
 
 # Filtering dataset where gender is null/invalid
 filtered_data = data.filter(data["gender"].isin(["Male", "Female", "Other"]))
 
 
-# In[242]:
+# In[6]:
 
 
 # show how many of each gender are present in the group
 filtered_data.groupby("gender").count().show()
 
 
-# In[244]:
+# In[7]:
 
 
 # Grouping the data on 'gender' and calculating the average basesalary
@@ -70,7 +70,7 @@ rounded_avg_salary_per_gender = salary_per_gender.withColumn("avg(basesalary)", 
 rounded_avg_salary_per_gender.show()
 
 
-# In[245]:
+# In[8]:
 
 
 # Grouping the data on 'gender' and calculating the average bonus
@@ -83,14 +83,14 @@ rounded_avg_bonus_per_gender.show()
 
 # # Short Analysis by Ethnicity
 
-# In[225]:
+# In[9]:
 
 
 # Filtering the dataset where race is null
 filtered_ethnic_data = data.filter(data["race"]!="NA")
 
 
-# In[246]:
+# In[10]:
 
 
 # Grouping the data on 'race' and calculating the average base salary
@@ -101,7 +101,7 @@ rounded_avg_salary_per_race = salary_per_race.withColumn("avg(basesalary)", F.ro
 rounded_avg_salary_per_race.show()
 
 
-# In[247]:
+# In[11]:
 
 
 # Grouping the data on 'race' and calculating the average bonus
@@ -114,7 +114,7 @@ rounded_avg_bonus_per_race.show()
 
 # ## Creating new Column for Month/Year to allow for Grouping
 
-# In[248]:
+# In[12]:
 
 
 adjusted_data_1 = data.withColumn("date", to_date(col("date"), "yyyy-MM-dd"))    .withColumn('month', month("date"))
@@ -122,13 +122,13 @@ adjusted_data_1 = data.withColumn("date", to_date(col("date"), "yyyy-MM-dd"))   
 adjusted_data_2 = adjusted_data_1.withColumn("date", to_date(col("date"), "yyyy-MM-dd"))    .withColumn('year', year("date"))
 
 
-# In[249]:
+# In[13]:
 
 
 new_data = adjusted_data_2.select('year', 'month', 'gender', 'race', 'basesalary')
 
 
-# In[250]:
+# In[14]:
 
 
 # Combining the columns 'month' and 'year' to a column of DateType()
@@ -140,14 +140,14 @@ date_data = new_data.withColumn(
 
 # ## Plotting Average Salaries per Gender grouped by Month
 
-# In[253]:
+# In[15]:
 
 
 # Filtering dataset where gender is null/invalid
 filtered_data = date_data.filter(data["gender"].isin(["Male", "Female", "Other"]))
 
 
-# In[254]:
+# In[16]:
 
 
 # Grouping the data on 'gender' and calculating the average basesalary
@@ -157,14 +157,14 @@ salary_per_gender = filtered_data.groupby("date", "gender").mean("basesalary")
 rounded_avg_salary_per_gender = salary_per_gender.withColumn("avg(basesalary)", F.round(salary_per_gender["avg(basesalary)"], 2))
 
 
-# In[256]:
+# In[17]:
 
 
 # Converting the date column to DateType()
 clean_date = rounded_avg_salary_per_gender.select(to_date(col("date"),"MM/dd/yyyy").alias("date"), "gender", "avg(basesalary)")
 
 
-# In[262]:
+# In[18]:
 
 
 # Separating the gender data into separate Pandas Dataframes
@@ -173,7 +173,7 @@ male_salary = clean_date.filter(data["gender"]=="Male").toPandas()
 othergender_salary = clean_date.filter(data["gender"]=="Other").toPandas()
 
 
-# In[261]:
+# In[19]:
 
 
 # Plotting each of the genders' average base salary
@@ -192,7 +192,7 @@ plt.show()
 
 # ## Plotting Average Salaries per Gender grouped by Day
 
-# In[263]:
+# In[20]:
 
 
 # Filtering out null gender values
@@ -205,7 +205,7 @@ grouped_data = filtered_data.groupby('date', 'gender').mean('basesalary')
 rounded_data = grouped_data.withColumn("avg(basesalary)", F.round(grouped_data["avg(basesalary)"], 2))
 
 
-# In[264]:
+# In[21]:
 
 
 # Separating the gender data into separate Pandas Dataframes
@@ -214,7 +214,7 @@ male_salary = rounded_data.filter(data["gender"]=="Male").toPandas()
 othergender_salary = rounded_data.filter(data["gender"]=="Other").toPandas()
 
 
-# In[265]:
+# In[22]:
 
 
 # Plotting the average salary per gender for each day
@@ -233,7 +233,7 @@ plt.show()
 
 # ## Plotting Average Salaries per Race
 
-# In[266]:
+# In[23]:
 
 
 # Filtering dataset to exclude null values
@@ -246,14 +246,14 @@ salary_per_race = filtered_data.groupby("date", "race").mean("basesalary")
 rounded_data = salary_per_race.withColumn("avg(basesalary)", F.round(salary_per_race["avg(basesalary)"], 2))
 
 
-# In[267]:
+# In[24]:
 
 
 # Converting the date column to DateType()
 clean_date = rounded_data.select(to_date(col("date"),"MM/dd/yyyy").alias("date"), "race", "avg(basesalary)")
 
 
-# In[269]:
+# In[25]:
 
 
 # Creating separate datasets for each race
@@ -264,7 +264,7 @@ hispanic_salary = clean_date.filter(data["race"]=="Hispanic").toPandas()
 asian_salary = clean_date.filter(data["race"]=="Asian").toPandas()
 
 
-# In[270]:
+# In[26]:
 
 
 # Plotting each race's average base salary
@@ -285,7 +285,7 @@ plt.show()
 
 # ## Identifying Gender Differences per Job Position 
 
-# In[271]:
+# In[27]:
 
 
 # Finding the top 10 most common job titles in the dataset and assigning them in a list
@@ -295,21 +295,21 @@ most_common_titles = all_titles.sort(col("count").desc()).limit(10)
 most_common_titles_list = most_common_titles.rdd.map(lambda x: x[0]).collect()
 
 
-# In[272]:
+# In[28]:
 
 
 # Grouping data by job title and gender, and calculating the average base salary
 grouped_data = data.groupby('title', 'gender').mean('basesalary')
 
 
-# In[289]:
+# In[29]:
 
 
 # Filtering the data to only look at the top 10 most common positions, and converting it to a Pandas dataframe
 filtered_data = grouped_data.filter(grouped_data['title'].isin(most_common_titles_list)).toPandas()
 
 
-# In[290]:
+# In[30]:
 
 
 # Reassigning the title values as integers for easier graphing
@@ -321,7 +321,7 @@ for index in range(1, 11):
 filtered_data['title'] = filtered_data['title'].replace(titles_dict)
 
 
-# In[291]:
+# In[31]:
 
 
 # Creating separate datasets for each gender
@@ -330,7 +330,7 @@ male_data = filtered_data[filtered_data['gender']=="Male"]
 other_data = filtered_data[filtered_data['gender']=="Other"]
 
 
-# In[294]:
+# In[32]:
 
 
 # Plotting a horizontal bar chart for average base salary by position

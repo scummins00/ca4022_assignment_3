@@ -170,7 +170,7 @@ pandasdf1.shape
 # ## Total Compensation over Time per Title
 # We can now see that our dataframe consists of 18 data points for each of our 15 titles. This is a much more digestable dataset and will create a visualisation that is more interpretable and easy on the eyes.
 
-# In[16]:
+# In[15]:
 
 
 plt.figure(figsize=(15,10))
@@ -193,7 +193,7 @@ plt.show()
 # 
 # We'll make an individual plot for each title in the following cell.
 
-# In[22]:
+# In[16]:
 
 
 import random

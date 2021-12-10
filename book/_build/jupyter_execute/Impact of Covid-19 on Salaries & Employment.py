@@ -45,7 +45,7 @@ data = spark.read.format("csv")    .option("header", "false")    .option("delimi
 
 # ## Creating new Column for Month/Year to allow for Grouping
 
-# In[93]:
+# In[5]:
 
 
 adjusted_data_1 = data.withColumn("date", to_date(col("date"), "yyyy-MM-dd"))    .withColumn('month', month("date"))
@@ -53,7 +53,7 @@ adjusted_data_1 = data.withColumn("date", to_date(col("date"), "yyyy-MM-dd"))   
 adjusted_data_2 = adjusted_data_1.withColumn("date", to_date(col("date"), "yyyy-MM-dd"))    .withColumn('year', year("date"))
 
 
-# In[94]:
+# In[6]:
 
 
 # Combining the columns 'month' and 'year' to a column of DateType()
@@ -65,21 +65,21 @@ new_data = adjusted_data_2.withColumn(
 
 # ## Impact of Covid-19 on all Earnings
 
-# In[75]:
+# In[7]:
 
 
 # Selecting only the columns we need for our analysis
 selected_data = new_data.select(to_date(col("date"),"MM/dd/yyyy").alias("date"), 'totalyearlycompensation', 'basesalary', 'bonus')
 
 
-# In[76]:
+# In[8]:
 
 
 # Grouping data by month and year, and calculating the average values per month
 grouped_data = selected_data.groupby('date').mean('totalyearlycompensation', 'basesalary', 'bonus')
 
 
-# In[77]:
+# In[9]:
 
 
 # Rounding the data to the nearest 2 decimals
@@ -88,7 +88,7 @@ rounded_data2 = rounded_data1.withColumn("avg(totalyearlycompensation)", F.round
 rounded_data3 = rounded_data2.withColumn("avg(bonus)", F.round(rounded_data2["avg(bonus)"], 2))
 
 
-# In[78]:
+# In[10]:
 
 
 # Separating the different types of earnings into different datasets and converting to Pandas
@@ -97,7 +97,7 @@ salary_data = rounded_data3.select('date', 'avg(basesalary)').toPandas()
 bonus_data = rounded_data3.select('date', 'avg(bonus)').toPandas()
 
 
-# In[88]:
+# In[11]:
 
 
 # Plotting each earning type on a line chart
@@ -116,21 +116,21 @@ plt.show()
 
 # # Identifying the number of Records created Each Month
 
-# In[80]:
+# In[12]:
 
 
 # Selecting only the columns we need for our analysis
 selected_data = new_data.select(to_date(col("date"),"MM/dd/yyyy").alias("date"))
 
 
-# In[85]:
+# In[13]:
 
 
 # Grouping data by month and year, and calculating the number of entries for each month
 grouped_data = selected_data.groupby('date').count().toPandas()
 
 
-# In[97]:
+# In[14]:
 
 
 # Plotting the number of entries recorded each month

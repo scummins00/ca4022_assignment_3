@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Impact of Covid-19 on Salaries &amp; Employment &#8212; CA4022 Assignment 3</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,19 +32,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -55,7 +56,10 @@
     <link rel="next" title="Gradient Boosted Tree" href="Gradient%20Boosted%20Tree.html" />
     <link rel="prev" title="Salary Expectation in Relation to Job Position or Title" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -257,10 +261,10 @@
         
               <div>
                 
-  <div class="section" id="impact-of-covid-19-on-salaries-employment">
+  <section class="tex2jax_ignore mathjax_ignore" id="impact-of-covid-19-on-salaries-employment">
 <h1>Impact of Covid-19 on Salaries &amp; Employment<a class="headerlink" href="#impact-of-covid-19-on-salaries-employment" title="Permalink to this headline">¶</a></h1>
 <p>The aim of this analysis is to highlight potential impacts that the covid-19 pandemic may have had on the average salary/bonus/total yearly compensation, and also its effects on employment rates.</p>
-<div class="section" id="importing-relevant-packages-and-datasets">
+<section id="importing-relevant-packages-and-datasets">
 <h2>Importing Relevant Packages and Datasets<a class="headerlink" href="#importing-relevant-packages-and-datasets" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -269,42 +273,17 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_7012</span><span class="o">/</span><span class="mf">1871603196.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">findspark</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\findspark.py</span> in <span class="ni">init</span><span class="nt">(spark_home, python_path, edit_rc, edit_profile)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> 
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">spark_home</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">129</span>         <span class="n">spark_home</span> <span class="o">=</span> <span class="n">find</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> 
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">python_path</span><span class="p">:</span>
-
-<span class="nn">~\AppData\Roaming\Python\Python38\site-packages\findspark.py</span> in <span class="ni">find</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> 
-<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">spark_home</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>             <span class="s2">&quot;Couldn&#39;t find Spark, make sure SPARK_HOME env is set&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>             <span class="s2">&quot; or Spark is in an expected location (e.g. from homebrew installation).&quot;</span>
-
-<span class="ne">ValueError</span>: Couldn&#39;t find Spark, make sure SPARK_HOME env is set or Spark is in an expected location (e.g. from homebrew installation).
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pyspark</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">pyspark.sql.functions</span> <span class="k">as</span> <span class="nn">F</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">to_timestamp</span><span class="p">,</span> <span class="n">unix_timestamp</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">to_timestamp</span><span class="p">,</span> <span class="n">unix_timestamp</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">month</span>
 </pre></div>
 </div>
 </div>
@@ -349,8 +328,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-new-column-for-month-year-to-allow-for-grouping">
+</section>
+<section id="creating-new-column-for-month-year-to-allow-for-grouping">
 <h2>Creating new Column for Month/Year to allow for Grouping<a class="headerlink" href="#creating-new-column-for-month-year-to-allow-for-grouping" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -374,8 +353,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="impact-of-covid-19-on-all-earnings">
+</section>
+<section id="impact-of-covid-19-on-all-earnings">
 <h2>Impact of Covid-19 on all Earnings<a class="headerlink" href="#impact-of-covid-19-on-all-earnings" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -412,11 +391,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -438,9 +412,9 @@
 </div>
 </div>
 <p>The chart above shows that there was virtually no effect on average earnings related to Covid-19. The pandemic began in early 2020, and the chart does not show any noticeable increase/decrease in earnings, rather the earnings just continue to decline slightly from 2018.</p>
-</div>
-</div>
-<div class="section" id="identifying-the-number-of-records-created-each-month">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="identifying-the-number-of-records-created-each-month">
 <h1>Identifying the number of Records created Each Month<a class="headerlink" href="#identifying-the-number-of-records-created-each-month" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,13 +428,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grouping data by month and year, and calculating the number of entries for each month</span>
 <span class="n">grouped_data</span> <span class="o">=</span> <span class="n">selected_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Stage 94:&gt;                                                         (0 + 1) / 1]
-
-                                                                                
 </pre></div>
 </div>
 </div>
@@ -482,7 +449,7 @@
 </div>
 </div>
 <p>There is a similar finding in this chart also, the pandemic does not seem to have an effect on the number of entries recorded each month. We expect that the employment rates are relative to the number of entries recorded, and so we can deduce that the employment rates in the STEM sectors have been steadily increasing since mid-2018.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -507,31 +474,22 @@
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Salary Expectation in Relation to Job Position or Title</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Salary%20Expectation%20in%20Relation%20to%20Job%20Position%20or%20Title.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Salary Expectation in Relation to Job Position or Title</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Gradient%20Boosted%20Tree.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Gradient Boosted Tree</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Gradient%20Boosted%20Tree.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Gradient Boosted Tree</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -552,8 +510,7 @@
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
